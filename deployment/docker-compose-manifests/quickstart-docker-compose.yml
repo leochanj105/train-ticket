@@ -523,7 +523,7 @@ services:
       - my-network
 
   ts-delivery-service:
-    image: ${NAMESPACE}/ts-delivery-servicee:${TAG}
+    image: ${NAMESPACE}/ts-delivery-service:${TAG}
     restart: always
     ports:
       - 18808:18808
