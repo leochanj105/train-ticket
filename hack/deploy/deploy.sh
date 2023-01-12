@@ -93,7 +93,7 @@ function parse_args {
 }
 
 echo "args num: $#"
-if [ $# == 2 ]; then
+if [ $# -gt 2 ]; then
   argNone=0
   parse_args $args
 fi
