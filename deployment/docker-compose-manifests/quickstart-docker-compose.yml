@@ -552,7 +552,7 @@ services:
     image: ${NAMESPACE}/ts-gateway-service:${TAG}
     restart: always
     ports:
-      - 18888:18888
+      - 18889:18889
     networks:
       - my-network
 
