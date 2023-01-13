@@ -424,7 +424,7 @@ services:
          expose:
             - "3306"
          environment:
-           MYSQL_ROOT_PASSWORD: root
+           MYSQL_ROOT_PASSWORD: Abcd1234#
          networks:
            - my-network
 
