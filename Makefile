@@ -1,6 +1,7 @@
 # Codewisdom Train-Ticket system
 
-Repo=codewisdom
+# Repo=codewisdom
+Repo=localhost:5000
 Tag=latest
 Namespace="default"
 DeployArgs=""

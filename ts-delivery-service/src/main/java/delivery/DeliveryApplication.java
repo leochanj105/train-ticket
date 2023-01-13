@@ -19,6 +19,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class DeliveryApplication {
 
     public static void main(String[] args) {
+        System.out.println("Testing: inside DeliveryApplication main()");
         SpringApplication.run(DeliveryApplication.class, args);
     }
 
