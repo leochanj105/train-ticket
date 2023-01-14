@@ -1,8 +1,8 @@
 # Codewisdom Train-Ticket system
 
-Username=codewisdom
-Tag=0.1.0
-
+Username=test
+#Tag=0.1.0
+Tag=latest
 # build image
 .PHONY: build
 build: clean-image package build-image
