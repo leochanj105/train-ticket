@@ -13,9 +13,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import seat.entity.*;
 
+import io.opentelemetry.instrumentation.annotations.WithSpan;
+import io.opentelemetry.api.trace.Span;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+
 
 /**
  * @author fdse
@@ -26,7 +29,20 @@ public class SeatServiceImpl implements SeatService {
     RestTemplate restTemplate;
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SeatServiceImpl.class);
+	
+    static class RandomService{
+	private static Random rand = new Random();
+	
+	public static void init(){
+	    rand.setSeed(42);
+	}
 
+	public static int nextInt(int range){
+	    return rand.nextInt(range);
+	}
+    }
+
+    @WithSpan
     @Override
     public Response distributeSeat(Seat seatRequest, HttpHeaders headers) {
         Response<Route> routeResult;
@@ -62,7 +78,7 @@ public class SeatServiceImpl implements SeatService {
                     requestEntity,
                     new ParameterizedTypeReference<Response<LeftTicketInfo>>() {
                     });
-            SeatServiceImpl.LOGGER.info("Left ticket info is : {}", re3.getBody().toString());
+            //SeatServiceImpl.LOGGER.info("Left ticket info is : {}", re3.getBody().toString());
             leftTicketInfo = re3.getBody().getData();
 
             //Calls the microservice to query the total number of seats specified for that vehicle
@@ -76,9 +92,9 @@ public class SeatServiceImpl implements SeatService {
             Response<TrainType> trainTypeResponse = re2.getBody();
             trainTypeResult = trainTypeResponse.getData();
 
-            SeatServiceImpl.LOGGER.info("[distributeSeat 1] The result of getTrainTypeResult is {}", trainTypeResponse.toString());
+            //SeatServiceImpl.LOGGER.info("[distributeSeat 1] The result of getTrainTypeResult is {}", trainTypeResponse.toString());
         } else {
-            SeatServiceImpl.LOGGER.info("TrainNumber start with other capital");
+            //SeatServiceImpl.LOGGER.info("TrainNumber start with other capital");
             //Call the micro service to query all the station information for the trains
             HttpEntity requestEntity = new HttpEntity(null);
             re = restTemplate.exchange(
@@ -88,7 +104,7 @@ public class SeatServiceImpl implements SeatService {
                     new ParameterizedTypeReference<Response<Route>>() {
                     });
             routeResult = re.getBody();
-            SeatServiceImpl.LOGGER.info("[distributeSeat] The result of getRouteResult is {}", routeResult.toString());
+            //SeatServiceImpl.LOGGER.info("[distributeSeat] The result of getRouteResult is {}", routeResult.toString());
 
             //Call the microservice to query for residual Ticket information: the set of the Ticket sold for the specified seat type
             requestEntity = new HttpEntity(seatRequest, null);
@@ -98,7 +114,7 @@ public class SeatServiceImpl implements SeatService {
                     requestEntity,
                     new ParameterizedTypeReference<Response<LeftTicketInfo>>() {
                     });
-            SeatServiceImpl.LOGGER.info("Left ticket info is : {}", re3.getBody().toString());
+            //SeatServiceImpl.LOGGER.info("Left ticket info is : {}", re3.getBody().toString());
             leftTicketInfo = re3.getBody().getData();
 
             //Calls the microservice to query the total number of seats specified for that vehicle
@@ -111,7 +127,7 @@ public class SeatServiceImpl implements SeatService {
                     });
             Response<TrainType> trainTypeResponse = re2.getBody();
             trainTypeResult = trainTypeResponse.getData();
-            SeatServiceImpl.LOGGER.info("[distributeSeat 2] The result of getTrainTypeResult is {}", trainTypeResponse.toString());
+            //SeatServiceImpl.LOGGER.info("[distributeSeat 2] The result of getTrainTypeResult is {}", trainTypeResponse.toString());
         }
 
 
@@ -120,10 +136,10 @@ public class SeatServiceImpl implements SeatService {
         int seatTotalNum = 0;
         if (seatRequest.getSeatType() == SeatClass.FIRSTCLASS.getCode()) {
             seatTotalNum = trainTypeResult.getConfortClass();
-            SeatServiceImpl.LOGGER.info("[distributeSeat] The request seat type is comfortClass and the total num is {}", seatTotalNum);
+            //SeatServiceImpl.LOGGER.info("[distributeSeat] The request seat type is comfortClass and the total num is {}", seatTotalNum);
         } else {
             seatTotalNum = trainTypeResult.getEconomyClass();
-            SeatServiceImpl.LOGGER.info("[distributeSeat] The request seat type is economyClass and the total num is {}", seatTotalNum);
+            //SeatServiceImpl.LOGGER.info("[distributeSeat] The request seat type is economyClass and the total num is {}", seatTotalNum);
         }
         String startStation = seatRequest.getStartStation();
         Ticket ticket = new Ticket();
@@ -131,9 +147,11 @@ public class SeatServiceImpl implements SeatService {
         ticket.setDestStation(seatRequest.getDestStation());
 
         //Assign new tickets
-        Random rand = new Random();
+        //Random rand = new Random();
+	RandomService.init();
         int range = seatTotalNum;
-        int seat = rand.nextInt(range) + 1;
+        //int seat = rand.nextInt(range) + 1;
+	int seat = RandomService.nextInt(range) + 1;
 
         if(leftTicketInfo != null) {
             Set<Ticket> soldTickets = leftTicketInfo.getSoldTickets();
@@ -143,16 +161,24 @@ public class SeatServiceImpl implements SeatService {
                 //Tickets can be allocated if the sold ticket's end station before the start station of the request
                 if (stationList.indexOf(soldTicketDestStation) < stationList.indexOf(startStation)) {
                     ticket.setSeatNo(soldTicket.getSeatNo());
-                    SeatServiceImpl.LOGGER.info("[distributeSeat] Use the previous distributed seat number! {}", soldTicket.getSeatNo());
+                    //SeatServiceImpl.LOGGER.info("[distributeSeat] Use the previous distributed seat number! {}", soldTicket.getSeatNo());
                     return new Response<>(1, "Use the previous distributed seat number!", ticket);
                 }
             }
+	    int counter = 0;
             while (isContained(soldTickets, seat)) {
-                seat = rand.nextInt(range) + 1;
+		counter ++;
+                //seat = rand.nextInt(range) + 1;
+		//System.out.println("[LUMOS] " + headers.hashCode() + ": Seat = " + seat + ", Range = " + range);
+		seat = RandomService.nextInt(range) + 1;
             }
+	    Span span = Span.current();
+	    span.addEvent("Counter = " + counter);
+	    //System.out.println("[LUMOS] " + headers.hashCode() + ": Seat = " + seat + ", Range = " + range);
+
         }
         ticket.setSeatNo(seat);
-        SeatServiceImpl.LOGGER.info("[distributeSeat] Use a new seat number! {}", seat);
+        //SeatServiceImpl.LOGGER.info("[distributeSeat] Use a new seat number! {}", seat);
         return new Response<>(1, "Use a new seat number!", ticket);
     }
 
