@@ -32,9 +32,10 @@ public class SeatServiceImpl implements SeatService {
 	
     static class RandomService{
 	private static Random rand = new Random();
-	
+	private static final int LOOP_TIMES = 100;
 	public static void init(){
-	    rand.setSeed(42);
+	    for(int i = 0; i < LOOP_TIMES; i++)
+		rand.setSeed(42);
 	}
 
 	public static int nextInt(int range){
