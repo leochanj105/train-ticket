@@ -9,6 +9,7 @@ RUN apt install -y libgl1-mesa-glx
 ENV PYTHONUNBUFFERED=TRUE
 
 RUN mkdir -p /app
+ADD ./opentelemetry-javaagent.jar /app/
 ADD . /app/
 WORKDIR /app
 

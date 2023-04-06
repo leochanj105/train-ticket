@@ -85,6 +85,11 @@ Build images:
 sudo make build-image
 ```
 
+#### 5c. Build Lumos controller
+```bash
+cd lumos && docker build -t lumos .
+```
+
 #### 6. Start the Application
 If you setup for opentemetry, you need to also start a collector service and a jaeger service.
 To do so, just uncomment the last two services under the name "jaeger-service" and "collecter".
