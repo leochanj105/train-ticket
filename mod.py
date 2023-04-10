@@ -1,4 +1,7 @@
 import os
+
+collector_addr = "amd231.utah.cloudlab.us"
+
 for fdir in os.listdir('./'):
     if("ts-" in fdir and "service" in fdir):
         lines = []
@@ -9,7 +12,7 @@ for fdir in os.listdir('./'):
                     lines.append("ADD ./opentelemetry-javaagent.jar /app/\n")
                 if('-Xmx200m' in line):
                     idx = line.index('"-Xmx200m') 
-                    str = '"-javaagent:/app/opentelemetry-javaagent.jar", "-Dotel.service.name=' + fdir +'", "-Dotel.exporter.otlp.endpoint=http://collector:4317", '
+                    str = '"-javaagent:/app/opentelemetry-javaagent.jar", "-Dotel.service.name=' + fdir +'", "-Dotel.exporter.otlp.endpoint=http://' + collector_addr + ':4317", '
                     lines.append(line[:idx] + str + line[idx:])
                 else:
                     lines.append(line)

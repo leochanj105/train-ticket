@@ -12,7 +12,7 @@ public class InitData implements CommandLineRunner {
 
     @Autowired
     TrainService service;
-    private final static int SEATNUM = 200;
+    private final static int SEATNUM = Integer.MAX_VALUE;
     @Override
     public void run(String... args) throws Exception {
         TrainType info = new TrainType();

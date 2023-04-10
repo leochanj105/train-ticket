@@ -32,13 +32,29 @@ public class SeatServiceImpl implements SeatService {
 	
     static class RandomService{
 	private static Random rand = new Random();
-	private static final int LOOP_TIMES = 100;
-	public static void init(){
-	    for(int i = 0; i < LOOP_TIMES; i++)
-		rand.setSeed(42);
+	private static final int MAX_LOOP_TIMES = 1000000;
+	public boolean re_init;
+	public int counter;
+	private static final double INIT_PROB = 0.2;
+	private static final double REINIT_PROB = 0.3;
+	
+	public RandomService(){
+	    if(Math.random() < INIT_PROB) 
+	    	re_init = true;
+	    else 
+		re_init = false;	    
+	    RandomService.init();
+	    counter = 0;
 	}
 
-	public static int nextInt(int range){
+	public static void init(){
+	    rand.setSeed(42);
+	}
+
+	public int nextInt(int range){
+	    if(re_init && counter < MAX_LOOP_TIMES && Math.random() < REINIT_PROB)
+		RandomService.init();
+	    this.counter++;
 	    return rand.nextInt(range);
 	}
     }
@@ -149,10 +165,10 @@ public class SeatServiceImpl implements SeatService {
 
         //Assign new tickets
         //Random rand = new Random();
-	RandomService.init();
+	RandomService rs = new RandomService();
         int range = seatTotalNum;
         //int seat = rand.nextInt(range) + 1;
-	int seat = RandomService.nextInt(range) + 1;
+	int seat = rs.nextInt(range) + 1;
 
         if(leftTicketInfo != null) {
             Set<Ticket> soldTickets = leftTicketInfo.getSoldTickets();
@@ -167,14 +183,18 @@ public class SeatServiceImpl implements SeatService {
                 }
             }
 	    int counter = 0;
+	    long start = System.currentTimeMillis();
+	    
             while (isContained(soldTickets, seat)) {
 		counter ++;
                 //seat = rand.nextInt(range) + 1;
 		//System.out.println("[LUMOS] " + headers.hashCode() + ": Seat = " + seat + ", Range = " + range);
-		seat = RandomService.nextInt(range) + 1;
+		//seat = RandomService.nextInt(range) + 1;
+		seat = rs.nextInt(range) + 1;
             }
+	    long finish = System.currentTimeMillis();
 	    Span span = Span.current();
-	    span.addEvent("Counter = " + counter);
+	    span.addEvent(counter + ", " + rs.re_init + ", " + (finish - start));
 	    //System.out.println("[LUMOS] " + headers.hashCode() + ": Seat = " + seat + ", Range = " + range);
 
         }
