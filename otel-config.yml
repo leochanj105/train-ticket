@@ -6,6 +6,8 @@ receivers:
 
 processors:
   batch:
+    send_batch_size: 512
+    export_trace_service_spans: true
 
 exporters:
   logging:
