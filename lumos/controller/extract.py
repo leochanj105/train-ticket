@@ -43,13 +43,33 @@ def write_traces(directory, traces):
     Write traces locally to files
     """
     for trace in traces:
-        # for item in trace:
-        #     print(item)
-        print(trace["processes"])
+        # traceID, spans, processes, warnings
+        if len(trace["spans"]) < 20:
+            pass
         traceid = trace["traceID"]
-        path = directory + "/" + traceid + ".json"
-        with open(path, 'w') as fd:
-            fd.write(json.dumps(trace))
+        print(traceid)
+        
+        for span in trace["spans"]:
+            for item in span:
+                try:
+                    print(item, len(span[item]))
+                    print(span[item][0])
+                except:
+                    pass
+            break
+
+        # traceID,spanID,operationName,references,startTime,duration,tags,logs,processID,warnings
+        # print(len(trace["spans"][0]))
+
+        # print(trace["processes"])
+        
+        # path = directory + "/" + traceid + ".json"
+        # with open(path, 'w') as fd:
+        #     fd.write(json.dumps(trace))
+        
+        break
+
+
 
 
 if __name__ == '__main__':

@@ -74,7 +74,7 @@ Copy opentemetry jars:
 bash copy.sh
 ```
 
-Modify Dockerfiles to run with the opentelemtry instrumentation:
+Modify Dockerfiles to run with the opentelemtry instrumentation (do not run this under `controller` branch):
 ```bash
 python3 mod.py
 ```
@@ -90,11 +90,19 @@ sudo make build-image
 cd lumos && docker build -t lumos .
 ```
 
+### 5d, Run Preprocesser
+```bash
+apt install python3.8-dev
+python3.8 -m pip install javalang
+cd lumos/preprocesser && python3.8 train-ticket-parser.py
+```
+You need to change the train-ticket project dir in `train-ticket-parser.py`. This will generate `coarse_block.lms` and `fine_block.lms`, each contains pairs of tracepoints.
+
 #### 6. Start the Application
 If you setup for opentemetry, you need to also start a collector service and a jaeger service.
 To do so, just uncomment the last two services under the name "jaeger-service" and "collecter".
 
-Also, since you want to use your compiled version of images, set the following environments:
+Also, since you want to use your compiled version of images, set the following environments (do not run these exports under `controller` branch):
 
 ```bash
 export IMG_REPO=test
