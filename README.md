@@ -34,6 +34,11 @@ sudo apt-get update
 sudo apt install docker.io
 sudo apt install docker-compose
 sudo apt install maven
+sudo apt-get install openjdk-8-jdk
+```
+In case your system previously have other versions of java, run the following and choose java-8
+```bash
+sudo update-alternatives --config java
 ```
 Optional: you may want to reconfigure the path where you docker images are saved:
 create a JSON file /etc/docker/daemon.json with the content pointing to the new storage location:

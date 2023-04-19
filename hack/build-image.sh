@@ -12,4 +12,7 @@ for dir in ts-*; do
             docker tag "$1"/"${dir}":latest "$1"/"${dir}":"$2"
         fi
     fi
+echo "build lumos"
+docker build -t "lumos" "lumos"
+docker tag "lumos":latest "lumos":"$2"
 done
