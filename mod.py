@@ -1,4 +1,5 @@
 import os
+collector_addr = "collector"
 for fdir in os.listdir('./'):
     if("ts-" in fdir and "service" in fdir):
         lines = []
@@ -28,7 +29,7 @@ for fdir in os.listdir('./'):
                         str += '"-javaagent:/app/LumosAgent-jar-with-dependencies.jar", "-Dsname=' +fdir +'", '
                     if "opentelemetry-javaagent" not in line:
                         str += '"-javaagent:/app/opentelemetry-javaagent.jar", "-Dotel.service.name='
-                        str += fdir +'", "-Dotel.exporter.otlp.endpoint=http://collector:4317", ' 
+                        str += fdir +'", "-Dotel.exporter.otlp.endpoint=http://' + collector_addr + ':4317", ' 
                     lines.append(line[:idx] + str + line[idx:])
                 else:
                     lines.append(line)

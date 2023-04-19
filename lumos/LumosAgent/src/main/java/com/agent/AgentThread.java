@@ -21,6 +21,9 @@ import edu.brown.cs.systems.dynamicinstrumentation.*;
 import javassist.bytecode.AnnotationsAttribute;
 import javassist.bytecode.annotation.Annotation;
 import javassist.bytecode.ConstPool;
+import org.json.*;
+import java.util.Map;
+import java.util.HashMap;
 
 public class AgentThread implements Runnable, MessageHandler{
     public Instrumentation inst;
@@ -28,6 +31,8 @@ public class AgentThread implements Runnable, MessageHandler{
     public DynamicManager manager;
     public WebSocketClient client;
     public String sname = System.getProperty("sname");
+
+    public Map<String, DynamicModification> tpmap;
     // public ClassLoader loader;
     //public static final String CLASSNAME = "com.test.App";
     //public static final String METHODNAME = "yell";
@@ -43,7 +48,9 @@ public class AgentThread implements Runnable, MessageHandler{
         this.inst = inst;
         this.agent = new JVMAgent(inst);
         this.manager = new DynamicManager(this.agent);
-	System.out.println("SNAME=" + sname);
+	tpmap = new HashMap<>();
+	//System.out.println("SNAME=" + sname);
+	
         // this.agent.loader = loader;
     }
 
@@ -60,11 +67,51 @@ public class AgentThread implements Runnable, MessageHandler{
         }
     }
 
+    public void handleJSON(String jstr){
+        //jstr = "{type:add, tps : [{id:\"1\", cname:a, method:b, tptype:code, line:1, code:xxx}, {id:\"2\", cname:a, method:b, tptype:span}]}";
+      
+        JSONObject obj = new JSONObject(jstr);
+        String x = obj.getString("type");
+        if(x.equals("add")){
+            JSONArray arr = obj.getJSONArray("tps");
+            for(int i = 0; i < arr.length(); i++){
+                JSONObject tp = arr.getJSONObject(i);
+                String id = tp.getString("id");
+                String cname = tp.getString("cname");
+                String method = tp.getString("method");
+                String tptype = tp.getString("tptype");
+		DynamicModification mod = null;
+                if(tptype.equals("code")){
+                    String code = tp.getString("code");
+                    int line = tp.getInt("line");
+		    mod = new InstructionModification(cname, method, code, line);
+                }
+                else if(tptype.equals("span")){
+   		    mod = new AnnotationModification(cname, method, WITHSPAN);
+                }
+		if(mod != null){
+  		    tpmap.put(id, mod);
+		    this.manager.add(mod);
+		}
+            }
+	    try{	    
+            	this.manager.install();
+	    }
+	    catch(Exception e){
+                e.printStackTrace();
+	    }
+        }
+        else{
+            System.out.println("removing temporarily not implemented");
+        }
+    }
+
     public void handleMessage(String message){
         System.out.println("Handling " + message);
-	if(message.equals("keepalive"))
-	    return;
-
+	//if(message.equals("keepalive"))
+	//    return;
+	handleJSON(message);
+	/*
         String[] traceArgs = message.split(",", 0);
 	System.out.println(traceArgs);
 	String classname = traceArgs[0];
@@ -81,6 +128,7 @@ public class AgentThread implements Runnable, MessageHandler{
             e.printStackTrace();
 	}
 	System.out.println("Instrumented!");
+	*/
     }
 
     @Override
@@ -92,9 +140,9 @@ public class AgentThread implements Runnable, MessageHandler{
         // Connect to websocket controller server
         connect("ws://lumos:8765");
 	
-	
+/*	
         // A test of adding a tracepoint, then remove it...
-/*        int seconds = 20;
+        int seconds = 20;
         for(int i = 0; i < seconds; i++){
             try{
                 Thread.sleep(1000);
@@ -107,7 +155,8 @@ public class AgentThread implements Runnable, MessageHandler{
         System.out.println("[LUMOS] Instrumenting...");
 
 
-        DynamicModification modifyMethod = new InstructionModification(CLASSNAME, METHODNAME, TESTTP, TESTLINE);
+        //DynamicModification modifyMethod = new InstructionModification(CLASSNAME, METHODNAME, TESTTP, TESTLINE);
+        DynamicModification modifyMethod = new AnnotationModification(CLASSNAME, METHODNAME, WITHSPAN);
         
         try{
             this.manager.add(modifyMethod);
