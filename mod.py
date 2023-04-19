@@ -22,13 +22,13 @@ for fdir in os.listdir('./'):
                     if not has_lumos:
                         lines.append("ADD ./LumosAgent-jar-with-dependencies.jar /app/\n")
                 if('-Xmx200m' in line):
-                    idx = line.index('"-Xmx200m') 
+                    idx = line.index('"java", ') + len('"java", ')
                     str = ""
+                    if "LumosAgent" not in line:
+                        str += '"-javaagent:/app/LumosAgent-jar-with-dependencies.jar", "-Dsname=' +fdir +'", '
                     if "opentelemetry-javaagent" not in line:
                         str += '"-javaagent:/app/opentelemetry-javaagent.jar", "-Dotel.service.name='
                         str += fdir +'", "-Dotel.exporter.otlp.endpoint=http://collector:4317", ' 
-                    if "LumosAgent" not in line:
-                        str += '"-javaagent:/app/LumosAgent-jar-with-dependencies.jar", "-Dsname=' +fdir +'", '
                     lines.append(line[:idx] + str + line[idx:])
                 else:
                     lines.append(line)
