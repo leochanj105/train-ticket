@@ -38,6 +38,7 @@ public class LumosAgent
                 // return transformed class file.
                 
                 if(LumosAgent.cloader == null && loader != null && loader.getClass().getName().contains("LaunchedURLClassLoader")){
+		    System.out.println("Hooked " + loader);
                     LumosAgent.cloader = loader;
                 }
 

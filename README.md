@@ -71,12 +71,12 @@ docker image tag mongo:5.0.0 mongo:latest
 docker image tag openjdk:8 java:8-jre
 ```
 
-#### 5a. Enable Opentelemetry instrumentation
-If you want don't want to include OTL instrumentation, simply goes to the next step.
+#### 5a. Enable OTLP+LUMOS instrumentation
+If you want don't want to include instrumentation, simply goes to the next step.
 Note: this will modify many files, so you may want to create a new branch if you want to keep an original version.
-Copy opentemetry jars:
+Build LumosAgent and copy jars:
 ```bash
-bash copy.sh
+bash setup.sh
 ```
 
 Modify Dockerfiles to run with the opentelemtry instrumentation (do not run this under `controller` branch):

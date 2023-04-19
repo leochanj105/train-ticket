@@ -3,6 +3,7 @@ import websockets
 import argparse
 import sys
 import time
+from threading import Thread
 
 class Server:
     # async def hello(websocket, path):
@@ -14,19 +15,31 @@ class Server:
     #     print(f"> {greeting}")
 
     def __init__(self):
-        self.conn = None
+        #self.conn = None
+        self.connections = dict()
         return
+    
+    async def test(self, name):
+        conn = self.connections[name]
+        seconds = 120
+        for i in range(seconds):
+            print(seconds - i)
+            time.sleep(1)
+            if i%5 == 0:
+                await conn.send("keepalive")
+
+        msg = 'travel.service.TravelServiceImpl,query,io.opentelemetry.api.trace.Span.current().addEvent(\"[LUMOS] HELLO!!!!!!!!\");,158'
+        await conn.send(msg)
+        print(f"> {msg}")
 
     async def handler(self, conn):
-        self.conn = conn
-        name = await self.conn.recv()
+        name = await conn.recv()
+        self.connections[name] = conn
         print(f"< {name}")
+        #await conn.send("Hi")
 
-        greeting = f"Hello {name}!"
-        while True:
-            await self.conn.send(greeting)
-            print(f"> {greeting}")
-            time.sleep(1)
+        if "ts-travel-service" in name:
+            await self.test(name)
 
     async def run(self):
         async with websockets.serve(self.handler, "0.0.0.0", 8765):

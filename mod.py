@@ -4,12 +4,31 @@ for fdir in os.listdir('./'):
         lines = []
         with open(fdir+"/Dockerfile", "r") as f:
             # print(fdir)
+            has_otlp = False
+            has_lumos = False
+            need_jars = False
             for line in f:
-                if("ADD" in line and "/app/" in line):
-                    lines.append("ADD ./opentelemetry-javaagent.jar /app/\n")
+                if "ADD" in line and "opentelemetry" in line:
+                    has_otlp = True
+                if "ADD" in line and "LumosAgent" in line:
+                    has_lumos = True
+                if "-Xmx200m" in line:
+                    need_jars = True
+            f.seek(0)
+            for line in f:
+                if "CMD" in line and need_jars:
+                    if not has_otlp:
+                        lines.append("ADD ./opentelemetry-javaagent.jar /app/\n")
+                    if not has_lumos:
+                        lines.append("ADD ./LumosAgent-jar-with-dependencies.jar /app/\n")
                 if('-Xmx200m' in line):
                     idx = line.index('"-Xmx200m') 
-                    str = '"-javaagent:/app/opentelemetry-javaagent.jar", "-Dotel.service.name=' + fdir +'", "-Dotel.exporter.otlp.endpoint=http://collector:4317", '
+                    str = ""
+                    if "opentelemetry-javaagent" not in line:
+                        str += '"-javaagent:/app/opentelemetry-javaagent.jar", "-Dotel.service.name='
+                        str += fdir +'", "-Dotel.exporter.otlp.endpoint=http://collector:4317", ' 
+                    if "LumosAgent" not in line:
+                        str += '"-javaagent:/app/LumosAgent-jar-with-dependencies.jar", "-Dsname=' +fdir +'", '
                     lines.append(line[:idx] + str + line[idx:])
                 else:
                     lines.append(line)
