@@ -32,7 +32,7 @@ public class SeatServiceImpl implements SeatService {
 	
     static class RandomService{
 	private static Random rand = new Random();
-	private static final int MAX_LOOP_TIMES = 1000000;
+	private static final int MAX_LOOP_TIMES = 2000000;
 	public boolean re_init;
 	public int counter;
 	private static final double INIT_PROB = 0.2;
@@ -59,7 +59,6 @@ public class SeatServiceImpl implements SeatService {
 	}
     }
 
-    @WithSpan
     @Override
     public Response distributeSeat(Seat seatRequest, HttpHeaders headers) {
         Response<Route> routeResult;
@@ -182,19 +181,19 @@ public class SeatServiceImpl implements SeatService {
                     return new Response<>(1, "Use the previous distributed seat number!", ticket);
                 }
             }
-	    int counter = 0;
+	    //int counter = 0;
 	    long start = System.currentTimeMillis();
 	    
             while (isContained(soldTickets, seat)) {
-		counter ++;
+		//counter ++;
                 //seat = rand.nextInt(range) + 1;
 		//System.out.println("[LUMOS] " + headers.hashCode() + ": Seat = " + seat + ", Range = " + range);
 		//seat = RandomService.nextInt(range) + 1;
 		seat = rs.nextInt(range) + 1;
             }
-	    long finish = System.currentTimeMillis();
-	    Span span = Span.current();
-	    span.addEvent(counter + ", " + rs.re_init + ", " + (finish - start));
+	    //long finish = System.currentTimeMillis();
+	    //Span span = Span.current();
+	    //span.addEvent(counter + ", " + rs.re_init + ", " + (finish - start));
 	    //System.out.println("[LUMOS] " + headers.hashCode() + ": Seat = " + seat + ", Range = " + range);
 
         }

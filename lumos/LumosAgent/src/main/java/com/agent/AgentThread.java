@@ -89,17 +89,45 @@ public class AgentThread implements Runnable, MessageHandler{
                 else if(tptype.equals("span")){
    		    mod = new AnnotationModification(cname, method, WITHSPAN);
                 }
+		else if(tptype.equals("timing")){
+		    int line1 = tp.getInt("line1");
+		    int line2 = tp.getInt("line2");		    
+		    mod = new TimingModification(cname, method, id, line1, line2);
+		}
+		/*else if(tptype.equals("var")){
+		    String type = tp.getString("type");
+		    String vname = tp.getString("vname");
+		    CtClass ctype = null;
+		    if(type.equals("boolean")){
+			 ctype = CtClass.booleanType;
+		    }
+		    else if(type.equals("int")){
+			 ctype = CtClass.intType;
+		    }
+		    else if(type.equals("long")){
+			 ctype = CtClass.longType;
+		    }
+		    else if(type.equals("float")){
+			 ctype = CtClass.floatType;
+		    }
+		    else if(type.equals("double")){
+			 ctype = CtClass.doubleType;
+		    }
+		    mod = new LocalVarModification(cname, method, vname, ctype);
+		}*/
+	
 		if(mod != null){
   		    tpmap.put(id, mod);
 		    this.manager.add(mod);
+	    	    try{	    
+              	 	this.manager.install();
+	    	    }
+	    	    catch(Exception e){
+            	 	e.printStackTrace();
+	   	    }
 		}
             }
-	    try{	    
-            	this.manager.install();
-	    }
-	    catch(Exception e){
-                e.printStackTrace();
-	    }
+
         }
         else{
             System.out.println("removing temporarily not implemented");
