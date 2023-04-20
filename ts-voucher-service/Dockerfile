@@ -9,7 +9,6 @@ COPY requirements.txt ./
 RUN pip install cryptography
 RUN pip install --no-cache-dir -r requirements.txt
 
-ADD ./opentelemetry-javaagent.jar /app/
 ADD ./server.py /app/
 CMD [ "python", "server.py" ]
 
