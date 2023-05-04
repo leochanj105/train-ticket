@@ -14,7 +14,7 @@ class Parse:
         if self.end_line == None:
             self.isValid = False
         else:
-            self.methods = self.FindMethodRange()            
+            self.methods = self.FindMethodRange()        
             self.fine_blocks, self.coarse_blocks = self.ParseCodeBlocks()
 
     def FindClassReturnLine(self):
@@ -94,9 +94,10 @@ class Parse:
             method = node.body
             if method == None or len(method) == 0:
                 return None, None
-            ends = self.methods[node.name + "_" + str(node.position.line)]["end"]
+            method_name = node.name + "_" + str(node.position.line)
+            ends = self.methods[method_name]["end"]
             for end in ends:
-                coarse_blocks.append((method[0].position.line, end))
+                coarse_blocks.append((method_name, method[0].position.line, end))
 
             start = 0
             end = 0
@@ -108,22 +109,22 @@ class Parse:
                     for temp_end in ends:
                         if temp_end > start and temp_end < end:
                             end = temp_end
-                            fine_blocks.append((start, end))
+                            fine_blocks.append((method_name, start, end))
                     
-                    fine_blocks.append((start, method[i+1].position.line))
+                    fine_blocks.append((method_name, start, method[i+1].position.line))
                 else:
                     for end in ends:
                         if end >= start:
-                            fine_blocks.append((start, end))
+                            fine_blocks.append((method_name, start, end))
 
         return fine_blocks, coarse_blocks
 
 
 
 if __name__ == '__main__':
-    train_ticket_path = "/users/lzhang/train-ticket/"
+    train_ticket_path = "/home/lei/train-ticket/"
 
-    coarse_blocks_file = "coarse_block.lms"
+    coarse_blocks_file = "coarse_blocks.lms"
     fine_blocks_file = "fine_blocks.lms"
     coarse_blocks_out = open(coarse_blocks_file, "w")
     fine_blocks_out = open(fine_blocks_file, "w")
@@ -142,17 +143,18 @@ if __name__ == '__main__':
                             if len(parser.coarse_blocks):
                                 coarse_blocks_out.write(fname+"\n")
                                 for item in parser.coarse_blocks:
-                                    if item[0] > item[1]:
+                                    
+                                    if item[1] > item[2]:
                                         print("Error")
-                                    coarse_blocks_out.write(str(item)+"\n")
+                                    coarse_blocks_out.write(item[0] + " " + str(item[1]) + " " + str(item[2]) + "\n")
                         
                         if parser.fine_blocks != None:
                             if len(parser.fine_blocks):
                                 fine_blocks_out.write(fname+"\n")
                                 for item in parser.fine_blocks:
-                                    if item[0] > item[1]:
+                                    if item[1] > item[2]:
                                         print("Error")
-                                    fine_blocks_out.write(str(item)+"\n")
+                                    fine_blocks_out.write(item[0] + " " + str(item[1]) + " " + str(item[2]) + "\n")
 
     coarse_blocks_out.close()
     fine_blocks_out.close()

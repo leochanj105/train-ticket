@@ -4,21 +4,29 @@ import argparse
 import sys
 
 import server
-import stat
-import parser
+import collector
+import analyzer
 
 
 class LumosController:
     def __init__(self):
-        self.server = server.Server()
-        asyncio.run(self.server.run())
-
         # WebSocket server
+        self.server = server.Server()
+
+        # Trace collector
+        self.collector = collector.Collector()
 
         # Trace parser
+        self.analyzer = analyzer.Analyzer()
 
-        # Trace stat examiner
+    async def run(self):
+        s = asyncio.create_task(self.server.run("/app/lumos/"))
+        c = asyncio.create_task(self.collector.run())
+        a = asyncio.create_task(self.analyzer.run())
 
+        await s
+        await c
+        await a
 
 if __name__ == '__main__':
     # parser = argparse.ArgumentParser()
@@ -28,3 +36,4 @@ if __name__ == '__main__':
     print("hello")
 
     controller = LumosController()
+    asyncio.run(controller.run())

@@ -7,8 +7,13 @@ from threading import Thread
 import json
 
 #testarray = ['c,travel.service.TravelServiceImpl,query,io.opentelemetry.api.trace.Span.current().addEvent(\"[LUMOS] HELLO!!!!!!!!\");,158']
+
 testarray = ['s, seat.service.SeatServiceImpl, distributeSeat']
 timingarray = [("seat.service.SeatServiceImpl", "distributeSeat", 185,194)]
+
+testfile = "seat.service.SeatServiceImpl"
+testmethod = "distributeSeat"
+
 class Server:
     # async def hello(websocket, path):
     #     name = await websocket.recv()
@@ -22,7 +27,10 @@ class Server:
         #self.conn = None
         self.connections = dict()
         self.id = 0
+        self.coarse_blocks = {}
+        self.fine_blocks = {}
         return
+
     def timingtps(self, arr):
         tps = "tps: ["
         for i, (cname, method, line1, line2) in enumerate(arr):
@@ -67,10 +75,91 @@ class Server:
         newid = self.id
         self.id += 1
         return f"id:'{newid}', cname:{cname}, method:{method}, tptype:span"
+    
+    def parse_tps_file(self, data, type):
+        service = ""
+        fname = ""
+        for line in data:
+            if ".java" in line:
+                temp = line.split("\n")[0].split("/")
+                if "train-ticket" in temp:
+                    service = temp[temp.index("train-ticket")+1]
+                    fname = ""
+                    for i in range(temp.index("java")+1, len(temp)-1):
+                        fname += temp[i]
+                        fname += "."
+                    fname += temp[-1].split(".java")[0]
+                if type == "c":
+                    if service not in self.coarse_blocks:
+                        self.coarse_blocks[service] = {}
+                    self.coarse_blocks[service][fname] = {}
+                elif type == "f":
+                    if service not in self.fine_blocks:
+                        self.fine_blocks[service] = {}
+                    self.fine_blocks[service][fname] = {}
+
+            else:
+                temp = line.split("\n")[0].split(" ")
+                method_name = temp[0]
+                s = int(temp[1])
+                e = int(temp[2])
+
+                if type == "c":
+                    if method_name not in self.coarse_blocks[service][fname]:
+                        self.coarse_blocks[service][fname][method_name] = []
+                    self.coarse_blocks[service][fname][method_name].append((s, e))
+                elif type == "f":
+                    if method_name not in self.fine_blocks[service][fname]:
+                        self.fine_blocks[service][fname][method_name] = []
+                    self.fine_blocks[service][fname][method_name].append((s, e))
+        
+        return
+
+    def get_tps(self):
+        for service in self.coarse_blocks:
+            for fname in self.coarse_blocks[service]:
+                if testfile == fname:
+                    for method in self.coarse_blocks[service][fname]:
+                        if testmethod == method.split("_")[0]:
+                            return self.coarse_blocks[service][fname][method]
+
+    def load_tps_file(self, tp_dir):
+        coarse = open(tp_dir + "coarse_blocks.lms", "r")
+        data = coarse.readlines()
+        coarse.close()
+        self.parse_tps_file(data, "c")
+
+        fine = open(tp_dir + "fine_blocks.lms", "r")
+        data = fine.readlines()
+        fine.close()
+        self.parse_tps_file(data, "d")
+
+        return
+
 
     async def test(self, name):
         conn = self.connections[name]
         seconds = 5
+        # try:
+        #     for i in range(seconds):
+        #         print(seconds - i)
+        #         await asyncio.sleep(1)
+
+        #     testarray = ['s,'+testfile+','+testmethod]
+        #     msg = self.gettps(testarray)
+        #     await conn.send(msg)
+        #     print(f"> {msg}")
+            
+        #     tps = self.get_tps()
+        #     for tp in tps:
+        #         timingarray = [(testfile, testmethod, tp[0], tp[1])]
+        #         msg = self.timingtps(timingarray)
+        #         await conn.send(msg)
+        #         print(f"> {msg}")
+
+        # except websockets.ConnectionClosedOK:
+        #     pass
+
         try:
             for i in range(seconds):
                 print(seconds - i)
@@ -95,15 +184,26 @@ class Server:
         if "ts-seat-service" in name:
             await self.test(name)
 
-    async def run(self):
+    async def run(self, tp_dir):
+        print("run server")
+        self.load_tps_file(tp_dir)
         async with websockets.serve(self.handler, "0.0.0.0", 8765):
             await asyncio.Future()  # run forever
 
 
 # if __name__ == '__main__':
-#     # parser = argparse.ArgumentParser()
-#     # parser.add_argument('-v','--views', type=int, nargs='+', help='Views', required=True)
-#     # options = parser.parse_args()
+#     s = Server()
+#     s.load_tps_file("../preprocessor/")
 
-#     sender = Sender()
-#     asyncio.run(sender.run())
+#     s.get_tps()
+
+#     testarray = ['s,'+testfile+','+testmethod]
+#     msg = s.gettps(testarray)
+#     print(msg)
+
+#     tps = s.get_tps()
+#     for tp in tps:
+#         print(tp[0], tp[1])
+#     timingarray = [(testfile, testmethod, 1, 2)]
+#     msg = s.timingtps(timingarray)
+#     print(msg)
