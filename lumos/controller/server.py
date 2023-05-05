@@ -179,12 +179,12 @@ class Server:
             await conn.send(msg)
             print(f"> {msg}")
                        
-            for i in range(120):
-                print(120 - i)
-                await asyncio.sleep(1)
-            msg = self.removetps(["0", "1", "2"])
-            print(f"> {msg}")
-            await conn.send(msg)
+            #for i in range(120):
+            #    print(120 - i)
+            #    await asyncio.sleep(1)
+            #msg = self.removetps(["0", "1", "2"])
+            #print(f"> {msg}")
+            #await conn.send(msg)
         except websockets.ConnectionClosedOK:
             pass
 

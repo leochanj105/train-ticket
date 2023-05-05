@@ -72,28 +72,47 @@ class Analyzer():
     def Analyze(self):
         self.outlier_function = []
         grouped_data = self.trace_data.groupby('Entry')
+        print(grouped_data)
         for group in grouped_data:
             entry = group[0]
+            #print("entry:" + entry)
             data = group[1]
+            #print(entry)
+            #print("data :")
+            #print(data)
 
             # Find out slow requests
             latency = data['Latency']
+            #print("latency:", latency)
+            
+            # FIXME
+            #latency = latency[latency <= 3000000]
+            
             mean, stdev = np.mean(latency), np.std(latency)
-
+            
             # 95% confidence interval
             outliers = np.abs(latency[:]-mean > 1.96 * stdev)
             baseline = data[outliers]["TraceID"].to_string(index=False)
-
+            #print("----")
+            #print(mean, stdev, np.abs(latency[:]-mean))
+            #print("----")
+            if "Series([], )" in baseline:
+                continue
+            
             # For each ops, find outliers
             meta_columns = ["Entry", "Latency", "TraceID"]
             for c in data.columns:
                 if c in meta_columns:
                     continue
+                #print(c)
+                
                 c_data = data[c]
                 c_mean, c_stdev = np.mean(c_data), np.std(c_data)
 
                 c_outliers = np.abs(c_data[:]-c_mean > 1.96 * c_stdev)
-
+                #print("------")
+                #print(c, baseline, data[c_outliers]["TraceID"])
+                #print(group,data , c_outliers, c_mean, c_Stdev)
                 # if the function identifies same outlier requests as slow requests, the function is considered as problematic
                 if baseline == data[c_outliers]["TraceID"].to_string(index=False):
                     if "." in c:
@@ -102,15 +121,17 @@ class Analyzer():
     async def run(self):
         print("run analyzer")
         while True:
+            self.trace_data = pd.DataFrame()
             try:
                 service = "ts-seat-service"
                 traces = os.listdir("/app/lumos/" + service)
-
+                print("len trace: ", len(traces))
                 for trace in traces:
                     self.LoadRawData("/app/lumos/" + service + "/" + trace)
                     self.ParseSpans()
 
                 self.Analyze()
+                print("outliers")
                 print(self.outlier_function)
                 await asyncio.sleep(10)
             
