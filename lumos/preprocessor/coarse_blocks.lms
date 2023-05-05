@@ -1,103 +1,44 @@
-/home/lei/train-ticket/ts-admin-user-service/src/main/java/adminuser/AdminUserApplication.java
-restTemplate_27 28 28
-/home/lei/train-ticket/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java
-home_26 27 27
-getAllUsers_32 33 34
-updateUser_38 39 40
-addUser_45 46 47
-deleteUser_51 52 53
-/home/lei/train-ticket/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java
-getAllUsers_33 34 43
-getAllUsers_33 34 46
-deleteUser_51 52 60
-deleteUser_51 52 63
-updateUser_67 68 79
-updateUser_67 68 82
-addUser_86 87 99
-addUser_86 87 102
-/home/lei/train-ticket/ts-admin-user-service/src/main/java/adminuser/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-user-service/src/main/java/user/controller/UserController.java
-testHello_31 32 32
-getAllUser_36 37 38
-getUserByUserName_42 43 44
-getUserByUserId_47 48 49
-registerUser_53 54 55
-deleteUserById_60 63 64
-updateUser_68 70 71
-/home/lei/train-ticket/ts-user-service/src/main/java/user/service/impl/UserServiceImpl.java
-saveUser_35 36 62
-saveUser_35 36 65
-createDefaultAuthUser_69 70 79
-getAllUsers_83 84 86
-getAllUsers_83 84 89
-findByUserName_93 94 96
-findByUserName_93 94 99
-findByUserId_103 104 106
-findByUserId_103 104 109
-deleteUser_113 114 122
-deleteUser_113 114 125
-updateUser_130 131 143
-updateUser_130 131 146
-/home/lei/train-ticket/ts-user-service/src/main/java/user/config/SecurityConfig.java
-passwordEncoder_35 36 36
-corsConfigurer_48 49 49
-/home/lei/train-ticket/ts-consign-service/src/main/java/consign/ConsignApplication.java
-restTemplate_27 28 28
-/home/lei/train-ticket/ts-consign-service/src/main/java/consign/controller/ConsignController.java
-home_29 30 30
-insertConsign_34 36 37
-updateConsign_41 42 43
-findByAccountId_47 48 50
-findByOrderId_54 55 57
-findByConsignee_61 62 63
-/home/lei/train-ticket/ts-consign-service/src/main/java/consign/service/ConsignServiceImpl.java
-insertConsignRecord_35 36 67
-updateConsignRecord_71 72 76
-updateConsignRecord_71 72 103
-queryByAccountId_107 108 110
-queryByAccountId_107 108 113
-queryByOrderId_118 119 121
-queryByOrderId_118 119 124
-queryByConsignee_129 130 132
-queryByConsignee_129 130 135
-/home/lei/train-ticket/ts-consign-service/src/main/java/consign/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-price-service/src/main/java/price/PriceApplication.java
+/users/leochanj/train-ticket/ts-food-map-service/src/main/java/food/init/InitData.java
+toFoodList_90 91 103
+/users/leochanj/train-ticket/ts-food-map-service/src/main/java/food/controller/TrainFoodController.java
+home_23 24 24
+getAllTrainFood_29 30 31
+getTrainFoodOfTrip_36 37 38
+/users/leochanj/train-ticket/ts-food-map-service/src/main/java/food/controller/FoodStoreController.java
+home_25 26 26
+getAllFoodStores_31 32 33
+getFoodStoresOfStation_38 39 40
+getFoodStoresByStationIds_45 46 47
+/users/leochanj/train-ticket/ts-food-map-service/src/main/java/food/config/SecurityConfig.java
+passwordEncoder_27 28 28
+corsConfigurer_40 41 41
+/users/leochanj/train-ticket/ts-food-map-service/src/main/java/food/service/FoodMapServiceImpl.java
+createFoodStore_32 33 36
+createFoodStore_32 33 39
+createTrainFood_44 45 51
+listFoodStores_55 56 58
+listFoodStores_55 56 61
+listTrainFood_66 67 69
+listTrainFood_66 67 72
+listFoodStoresByStationId_77 78 80
+listFoodStoresByStationId_77 78 83
+listTrainFoodByTripId_88 89 91
+listTrainFoodByTripId_88 89 94
+getFoodStoresByStationIds_99 100 102
+getFoodStoresByStationIds_99 100 105
+/users/leochanj/train-ticket/ts-route-service/src/main/java/route/RouteApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-price-service/src/main/java/price/controller/PriceController.java
-home_28 29 29
-query_33 35 36
-queryAll_40 41 42
-create_46 48 49
-delete_53 54 55
-update_59 60 61
-/home/lei/train-ticket/ts-price-service/src/main/java/price/service/PriceServiceImpl.java
-createNewPriceConfig_31 32 56
-findById_60 61 62
-findByRouteIdAndTrainType_66 67 73
-findByRouteIdAndTrainType_66 67 75
-findAllPriceConfig_81 82 89
-findAllPriceConfig_81 82 91
-deletePriceConfig_97 98 101
-deletePriceConfig_97 98 110
-updatePriceConfig_115 116 119
-updatePriceConfig_115 116 127
-/home/lei/train-ticket/ts-price-service/src/main/java/price/config/SecurityConfig.java
-passwordEncoder_38 39 39
-corsConfigurer_51 52 52
-/home/lei/train-ticket/ts-route-service/src/main/java/route/RouteApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-route-service/src/main/java/route/controller/RouteController.java
+/users/leochanj/train-ticket/ts-route-service/src/main/java/route/controller/RouteController.java
 home_27 28 28
 createAndModifyRoute_32 33 34
 deleteRoute_38 39 40
 queryById_44 45 46
 queryAll_50 51 52
 queryByStartAndTerminal_56 59 60
-/home/lei/train-ticket/ts-route-service/src/main/java/route/service/RouteServiceImpl.java
+/users/leochanj/train-ticket/ts-route-service/src/main/java/route/config/SecurityConfig.java
+passwordEncoder_35 36 36
+corsConfigurer_48 49 49
+/users/leochanj/train-ticket/ts-route-service/src/main/java/route/service/RouteServiceImpl.java
 createAndModify_30 31 39
 createAndModify_30 31 56
 createAndModify_30 31 70
@@ -109,122 +50,9 @@ getRouteByStartAndTerminal_99 100 111
 getRouteByStartAndTerminal_99 100 114
 getAllRoutes_119 120 122
 getAllRoutes_119 120 125
-/home/lei/train-ticket/ts-route-service/src/main/java/route/config/SecurityConfig.java
-passwordEncoder_35 36 36
-corsConfigurer_48 49 49
-/home/lei/train-ticket/ts-execute-service/src/main/java/execute/ExecuteApplication.java
+/users/leochanj/train-ticket/ts-travel-service/src/main/java/travel/TravelApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-execute-service/src/main/java/execute/entity/Order.java
-equals_70 71 72
-equals_70 71 75
-equals_70 71 78
-equals_70 71 81
-hashCode_99 100 102
-/home/lei/train-ticket/ts-execute-service/src/main/java/execute/controller/ExecuteControlller.java
-home_26 27 27
-executeTicket_32 33 35
-collectTicket_40 41 43
-/home/lei/train-ticket/ts-execute-service/src/main/java/execute/serivce/ExecuteServiceImpl.java
-ticketExecute_30 33 41
-ticketExecute_30 33 47
-ticketExecute_30 33 50
-ticketExecute_30 33 59
-ticketExecute_30 33 65
-ticketExecute_30 33 68
-ticketExecute_30 33 72
-ticketCollect_78 81 89
-ticketCollect_78 81 95
-ticketCollect_78 81 98
-ticketCollect_78 81 107
-ticketCollect_78 81 112
-ticketCollect_78 81 115
-ticketCollect_78 81 119
-executeOrder_125 126 134
-executeOrderOther_138 139 147
-getOrderByIdFromOrder_150 151 160
-getOrderByIdFromOrderOther_163 164 173
-/home/lei/train-ticket/ts-execute-service/src/main/java/execute/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-order-other-service/src/main/java/other/OrderOtherApplication.java
-restTemplate_29 30 30
-/home/lei/train-ticket/ts-order-other-service/src/main/java/other/entity/Order.java
-equals_72 73 74
-equals_72 73 77
-equals_72 73 80
-equals_72 73 83
-hashCode_101 102 104
-/home/lei/train-ticket/ts-order-other-service/src/main/java/other/entity/QueryInfo.java
-isEnableTravelDateQuery_72 73 73
-isEnableBoughtDateQuery_76 77 77
-isEnableStateQuery_80 81 81
-/home/lei/train-ticket/ts-order-other-service/src/main/java/other/entity/LeftTicketInfo.java
-toString_23 24 24
-/home/lei/train-ticket/ts-order-other-service/src/main/java/other/controller/OrderOtherController.java
-home_29 30 30
-getTicketListByDateAndTripId_36 37 38
-createNewOrder_43 44 47
-addcreateNewOrder_52 53 54
-queryOrders_59 61 62
-queryOrdersForRefresh_68 70 71
-calculateSoldTicket_77 79 80
-getOrderPrice_85 86 87
-payOrder_92 93 94
-getOrderById_99 100 101
-modifyOrder_106 107 108
-securityInfoCheck_113 115 116
-saveOrderInfo_121 124 125
-updateOrder_130 131 132
-deleteOrder_137 138 139
-findAllOrder_146 147 148
-/home/lei/train-ticket/ts-order-other-service/src/main/java/other/service/OrderOtherServiceImpl.java
-getSoldTickets_37 38 54
-getSoldTickets_37 38 58
-findOrderById_63 64 67
-findOrderById_63 64 69
-create_74 75 79
-create_74 75 85
-alterOrder_101 103 107
-alterOrder_101 103 116
-alterOrder_101 103 119
-queryOrders_124 126 177
-queryOrders_124 126 180
-queryOrdersForRefresh_185 186 197
-queryForStationId_200 202 210
-saveChanges_214 215 218
-saveChanges_214 215 239
-cancelOrder_244 246 249
-cancelOrder_244 246 254
-queryAlreadySoldOrders_259 260 291
-getAllOrders_295 296 299
-getAllOrders_295 296 301
-modifyOrder_306 307 310
-modifyOrder_306 307 314
-getOrderPrice_319 320 323
-getOrderPrice_319 320 326
-payOrder_331 332 335
-payOrder_331 332 339
-getOrderById_344 345 349
-getOrderById_344 345 351
-checkSecurityAboutOrder_356 357 377
-deleteOrder_381 382 386
-deleteOrder_381 382 389
-addNewOrder_394 395 399
-addNewOrder_394 395 405
-updateOrder_410 411 415
-updateOrder_410 411 435
-/home/lei/train-ticket/ts-order-other-service/src/main/java/other/config/SecurityConfig.java
-passwordEncoder_37 38 38
-corsConfigurer_50 51 51
-/home/lei/train-ticket/ts-travel-service/src/main/java/travel/TravelApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-travel-service/src/main/java/travel/entity/Route.java
-toString_28 29 29
-/home/lei/train-ticket/ts-travel-service/src/main/java/travel/entity/Seat.java
-toString_45 46 46
-/home/lei/train-ticket/ts-travel-service/src/main/java/travel/entity/TripId.java
-toString_41 42 42
-/home/lei/train-ticket/ts-travel-service/src/main/java/travel/controller/TravelController.java
+/users/leochanj/train-ticket/ts-travel-service/src/main/java/travel/controller/TravelController.java
 home_32 33 33
 getTrainTypeByTripId_37 40 41
 getRouteByTripId_45 47 49
@@ -238,7 +66,10 @@ queryInfo_108 109 117
 getTripAllDetailInfo_129 132 133
 queryAll_138 140 141
 adminQueryAll_146 148 149
-/home/lei/train-ticket/ts-travel-service/src/main/java/travel/service/TravelServiceImpl.java
+/users/leochanj/train-ticket/ts-travel-service/src/main/java/travel/config/SecurityConfig.java
+passwordEncoder_35 36 36
+corsConfigurer_48 49 49
+/users/leochanj/train-ticket/ts-travel-service/src/main/java/travel/service/TravelServiceImpl.java
 create_38 39 45
 create_38 39 48
 getRouteByTripId_53 54 66
@@ -271,199 +102,175 @@ getRouteByRouteId_351 352 367
 getRestTicketNumber_370 371 393
 adminQueryAll_397 398 408
 adminQueryAll_397 398 411
-/home/lei/train-ticket/ts-travel-service/src/main/java/travel/config/SecurityConfig.java
-passwordEncoder_35 36 36
-corsConfigurer_48 49 49
-/home/lei/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/InsidePaymentApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/entity/Order.java
-equals_70 71 72
-equals_70 71 75
-equals_70 71 78
-equals_70 71 81
-hashCode_99 100 102
-/home/lei/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/util/CookieUtil.java
-getCookieByName_29 30 32
-getCookieByName_29 30 34
-readCookieMap_38 39 46
-/home/lei/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/controller/InsidePaymentController.java
-home_27 28 28
-pay_32 33 34
-createAccount_38 39 40
-addMoney_44 46 47
-queryPayment_51 52 53
-queryAccount_57 58 59
-drawBack_63 64 65
-payDifference_69 70 71
-queryAddMoney_75 76 77
-/home/lei/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/async/AsyncTask.java
-sendAsyncCallToPaymentService_25 26 29
-/home/lei/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/async/ExecutorConfig.java
-mySimpleAsync_25 26 32
-myAsync_36 37 47
-/home/lei/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/service/InsidePaymentServiceImpl.java
-pay_39 41 63
-pay_39 41 112
-pay_39 41 115
-pay_39 41 123
-pay_39 41 127
-createAccount_132 133 140
-createAccount_132 133 143
-addMoney_148 149 155
-addMoney_148 149 158
-queryAccount_163 164 199
-queryAccount_202 203 220
-queryPayment_224 225 227
-queryPayment_224 225 230
-drawBack_235 236 242
-drawBack_235 236 245
-payDifference_250 252 296
-payDifference_250 252 299
-payDifference_250 252 305
-queryAddMoney_309 310 312
-queryAddMoney_309 310 315
-setOrderStatus_319 322 344
-/home/lei/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-admin-route-service/src/main/java/adminroute/AdminRouteApplication.java
+/users/leochanj/train-ticket/ts-travel-service/src/main/java/travel/entity/Seat.java
+toString_45 46 46
+/users/leochanj/train-ticket/ts-travel-service/src/main/java/travel/entity/TripId.java
+toString_41 42 42
+/users/leochanj/train-ticket/ts-travel-service/src/main/java/travel/entity/Route.java
+toString_28 29 29
+/users/leochanj/train-ticket/ts-admin-route-service/src/main/java/adminroute/AdminRouteApplication.java
 restTemplate_27 28 28
-/home/lei/train-ticket/ts-admin-route-service/src/main/java/adminroute/controller/AdminRouteController.java
+/users/leochanj/train-ticket/ts-admin-route-service/src/main/java/adminroute/controller/AdminRouteController.java
 home_27 28 28
 getAllRoutes_33 34 35
 addRoute_39 40 42
 deleteRoute_46 47 48
-/home/lei/train-ticket/ts-admin-route-service/src/main/java/adminroute/service/AdminRouteServiceImpl.java
+/users/leochanj/train-ticket/ts-admin-route-service/src/main/java/adminroute/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-admin-route-service/src/main/java/adminroute/service/AdminRouteServiceImpl.java
 getAllRoutes_25 27 36
 createAndModifyRoute_41 43 53
 deleteRoute_57 59 68
-/home/lei/train-ticket/ts-admin-route-service/src/main/java/adminroute/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/AdminBasicInfoApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/entity/Contacts.java
-equals_30 31 32
-equals_30 31 35
-equals_30 31 38
-equals_30 31 41
-hashCode_49 50 52
-/home/lei/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/controller/AdminBasicInfoController.java
+/users/leochanj/train-ticket/ts-admin-user-service/src/main/java/adminuser/AdminUserApplication.java
+restTemplate_27 28 28
+/users/leochanj/train-ticket/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java
 home_26 27 27
-getAllContacts_32 33 34
-deleteContacts_39 40 41
-modifyContacts_46 47 48
-addContacts_53 54 55
-getAllStations_60 61 62
-deleteStation_67 68 69
-modifyStation_74 75 76
-addStation_81 82 83
-getAllTrains_88 89 90
-deleteTrain_95 96 97
-modifyTrain_102 103 104
-addTrain_109 110 111
-getAllConfigs_116 117 118
-deleteConfig_123 124 125
-modifyConfig_130 131 132
-addConfig_137 138 139
-getAllPrices_144 145 146
-deletePrice_151 152 153
-modifyPrice_158 159 160
-addPrice_165 166 167
-/home/lei/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/service/AdminBasicInfoServiceImpl.java
-getAllContacts_33 34 44
-deleteContact_48 49 59
-modifyContact_63 64 74
-addContact_79 80 90
-getAllStations_94 96 103
-addStation_109 110 119
-deleteStation_123 124 133
-modifyStation_138 139 149
-getAllTrains_154 156 163
-addTrain_168 169 178
-deleteTrain_183 184 193
-modifyTrain_197 198 207
-getAllConfigs_211 214 221
-addConfig_225 228 234
-deleteConfig_238 240 246
-modifyConfig_250 253 259
-getAllPrices_263 266 274
-addPrice_278 280 286
-deletePrice_291 294 301
-modifyPrice_306 307 313
-/home/lei/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/config/SecurityConfig.java
-passwordEncoder_35 36 36
-corsConfigurer_48 49 49
-/home/lei/train-ticket/ts-train-service/src/main/java/train/controller/TrainController.java
-home_29 30 30
-create_35 36 39
-create_35 36 41
-retrieve_47 48 51
-retrieve_47 48 53
-update_59 60 63
-update_59 60 65
-delete_71 72 75
-delete_71 72 77
-query_83 84 87
-query_83 84 89
-/home/lei/train-ticket/ts-train-service/src/main/java/train/service/TrainServiceImpl.java
-create_22 23 33
-retrieve_37 38 40
-retrieve_37 38 42
-update_47 48 58
-delete_62 63 71
-query_75 76 76
-/home/lei/train-ticket/ts-train-service/src/main/java/train/config/SecurityConfig.java
+getAllUsers_32 33 34
+updateUser_38 39 40
+addUser_45 46 47
+deleteUser_51 52 53
+/users/leochanj/train-ticket/ts-admin-user-service/src/main/java/adminuser/config/SecurityConfig.java
 passwordEncoder_34 35 35
 corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-assurance-service/src/main/java/assurance/AssuranceApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-assurance-service/src/main/java/assurance/controller/AssuranceController.java
-home_28 29 29
-getAllAssurances_34 35 36
-getAllAssuranceType_41 42 43
-deleteAssurance_48 49 50
-deleteAssuranceByOrderId_55 56 57
-modifyAssurance_62 65 67
-createNewAssurance_73 75 76
-getAssuranceById_81 82 83
-findAssuranceByOrderId_88 89 90
-/home/lei/train-ticket/ts-assurance-service/src/main/java/assurance/service/AssuranceServiceImpl.java
-findAssuranceById_28 29 32
-findAssuranceById_28 29 35
-findAssuranceByOrderId_40 41 44
-findAssuranceByOrderId_40 41 47
-create_52 53 57
-create_52 53 60
-create_52 53 65
-deleteById_70 71 75
-deleteById_70 71 78
-deleteByOrderId_83 84 88
-deleteByOrderId_83 84 91
-modify_96 97 101
-modify_96 97 108
-modify_96 97 111
-getAllAssurances_117 118 131
-getAllAssurances_117 118 134
-getAllAssuranceTypes_139 141 151
-getAllAssuranceTypes_139 141 154
-/home/lei/train-ticket/ts-assurance-service/src/main/java/assurance/config/SecurityConfig.java
+/users/leochanj/train-ticket/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java
+getAllUsers_33 34 43
+getAllUsers_33 34 46
+deleteUser_51 52 60
+deleteUser_51 52 63
+updateUser_67 68 79
+updateUser_67 68 82
+addUser_86 87 99
+addUser_86 87 102
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/com/agent/InstructionModification.java
+affects_28 29 29
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/com/agent/AnnotationModification.java
+affects_32 33 33
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/com/agent/LumosAgent.java
+transform_32 40 58
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/com/agent/TimingModification.java
+affects_29 30 30
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/com/agent/SimpleTransformer.java
+transform_17 19 19
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/JDWPAgent.java
+getLoader_25 26 26
+get_30 32 33
+get_30 32 44
+get_30 32 51
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/JVMAgent.java
+getLoader_44 45 45
+get_48 50 51
+get_48 50 67
+get_48 50 71
+get_48 50 82
+getClassWithAgent_107 108 109
+getClassWithAgent_107 108 112
+transform_142 145 147
+transform_142 145 150
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/ExampleDynamicInstrumentation.java
+affects_47 48 48
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/DynamicManager.java
+add_28 29 30
+addAll_33 34 37
+remove_40 41 42
+removeAll_45 46 49
+refresh_52 53 54
+reset_57 58 59
+cancelPending_62 63 64
+clear_67 68 71
+affects_104 105 112
+changes_115 117 136
+/users/leochanj/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/DynamicInstrumentation.java
+get_20 21 24
+create_61 63 88
+/users/leochanj/train-ticket/ts-admin-travel-service/src/main/java/admintravel/AdminTravelApplication.java
+restTemplate_27 28 28
+/users/leochanj/train-ticket/ts-admin-travel-service/src/main/java/admintravel/controller/AdminTravelController.java
+home_26 27 27
+getAllTravels_32 33 34
+addTravel_38 39 41
+updateTravel_45 46 48
+deleteTravel_52 53 54
+/users/leochanj/train-ticket/ts-admin-travel-service/src/main/java/admintravel/config/SecurityConfig.java
 passwordEncoder_34 35 35
 corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-cancel-service/src/main/java/cancel/CancelApplication.java
+/users/leochanj/train-ticket/ts-admin-travel-service/src/main/java/admintravel/service/AdminTravelServiceImpl.java
+getAllTravels_30 31 70
+addTravel_74 75 92
+addTravel_74 75 95
+updateTravel_100 101 119
+updateTravel_100 101 123
+deleteTravel_127 129 146
+deleteTravel_127 129 150
+/users/leochanj/train-ticket/ts-admin-travel-service/src/main/java/admintravel/entity/TripId.java
+toString_39 40 40
+/users/leochanj/train-ticket/ts-rebook-service/src/main/java/rebook/RebookApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-cancel-service/src/main/java/cancel/entity/Order.java
-equals_68 69 70
-equals_68 69 73
-equals_68 69 76
-equals_68 69 79
-hashCode_97 98 100
-/home/lei/train-ticket/ts-cancel-service/src/main/java/cancel/controller/CancelController.java
+/users/leochanj/train-ticket/ts-rebook-service/src/main/java/rebook/controller/RebookController.java
+home_27 28 28
+payDifference_32 34 35
+rebook_39 40 41
+/users/leochanj/train-ticket/ts-rebook-service/src/main/java/rebook/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-rebook-service/src/main/java/rebook/service/RebookServiceImpl.java
+rebook_33 35 40
+rebook_33 35 44
+rebook_33 35 51
+rebook_33 35 56
+rebook_33 35 59
+rebook_33 35 62
+rebook_33 35 68
+rebook_33 35 81
+rebook_33 35 87
+rebook_33 35 92
+rebook_33 35 114
+rebook_33 35 116
+rebook_33 35 120
+rebook_33 35 126
+payDifference_131 132 137
+payDifference_131 132 161
+payDifference_131 132 164
+updateOrder_168 171 203
+updateOrder_168 171 206
+updateOrder_168 171 213
+dipatchSeat_217 218 233
+tripGD_237 238 238
+checkTime_241 242 267
+getTripAllDetailInformation_271 272 290
+createOrder_293 294 309
+updateOrder_312 313 326
+deleteOrder_329 331 345
+getOrderByRebookInfo_348 349 366
+queryForStationName_369 370 378
+payDifferentMoney_381 382 396
+drawBackMoney_399 401 409
+getAuthorizationHeadersFrom_412 413 417
+/users/leochanj/train-ticket/ts-rebook-service/src/main/java/rebook/entity/Contacts.java
+equals_32 33 34
+equals_32 33 37
+equals_32 33 40
+equals_32 33 43
+hashCode_51 52 54
+/users/leochanj/train-ticket/ts-rebook-service/src/main/java/rebook/entity/TripId.java
+toString_40 41 41
+/users/leochanj/train-ticket/ts-rebook-service/src/main/java/rebook/entity/Order.java
+equals_71 72 73
+equals_71 72 76
+equals_71 72 79
+equals_71 72 82
+hashCode_100 101 103
+/users/leochanj/train-ticket/ts-cancel-service/src/main/java/cancel/CancelApplication.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-cancel-service/src/main/java/cancel/controller/CancelController.java
 home_28 29 29
 calculate_34 35 36
 cancelTicket_41 44 47
 cancelTicket_41 44 50
-/home/lei/train-ticket/ts-cancel-service/src/main/java/cancel/service/CancelServiceImpl.java
+/users/leochanj/train-ticket/ts-cancel-service/src/main/java/cancel/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-cancel-service/src/main/java/cancel/service/CancelServiceImpl.java
 cancelOrder_34 36 60
 cancelOrder_34 36 80
 cancelOrder_34 36 83
@@ -490,140 +297,113 @@ drawbackMoney_263 264 275
 getAccount_278 279 288
 getOrderByIdFromOrder_291 292 301
 getOrderByIdFromOrderOther_304 305 314
-/home/lei/train-ticket/ts-cancel-service/src/main/java/cancel/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-notification-service/src/main/java/notification/NotificationApplication.java
-restTemplate_21 22 22
-/home/lei/train-ticket/ts-notification-service/src/main/java/notification/mq/RabbitReceive.java
-process_52 53 57
-/home/lei/train-ticket/ts-notification-service/src/main/java/notification/controller/NotificationController.java
-home_29 30 30
-test_send_34 35 36
-test_send_mail_40 41 54
-preserve_success_58 59 59
-order_create_success_63 64 64
-order_changed_success_68 69 69
-order_cancel_success_73 74 74
-/home/lei/train-ticket/ts-notification-service/src/main/java/notification/service/NotificationServiceImpl.java
-preserveSuccess_37 38 56
-preserveSuccess_37 38 59
-orderCreateSuccess_64 65 83
-orderCreateSuccess_64 65 86
-orderChangedSuccess_91 92 110
-orderChangedSuccess_91 92 113
-orderCancelSuccess_118 119 131
-orderCancelSuccess_118 119 134
-/home/lei/train-ticket/ts-notification-service/src/main/java/notification/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-notification-service/src/main/java/notification/config/Queues.java
-emailQueue_13 14 14
-/home/lei/train-ticket/ts-notification-service/src/main/java/notification/config/EmailProperties.java
-getHost_22 23 23
-getPort_30 31 31
-getUsername_38 39 39
-getPassword_46 47 47
-/home/lei/train-ticket/ts-basic-service/src/main/java/fdse/microservice/BasicApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-basic-service/src/main/java/fdse/microservice/entity/TravelResult.java
-isStatus_21 22 22
-/home/lei/train-ticket/ts-basic-service/src/main/java/fdse/microservice/entity/Contacts.java
-equals_32 33 34
-equals_32 33 37
-equals_32 33 40
-equals_32 33 43
-hashCode_51 52 54
-/home/lei/train-ticket/ts-basic-service/src/main/java/fdse/microservice/entity/TripId.java
-toString_37 38 38
-/home/lei/train-ticket/ts-basic-service/src/main/java/fdse/microservice/controller/BasicController.java
-home_29 30 30
-queryForTravel_34 36 37
-queryForStationId_41 43 44
-/home/lei/train-ticket/ts-basic-service/src/main/java/fdse/microservice/service/BasicServiceImpl.java
-queryForTravel_30 32 104
-queryForStationId_109 110 120
-queryForStationId_109 110 122
-checkStationExists_125 126 135
-queryTrainType_138 139 148
-getRouteByRouteId_151 152 162
-getRouteByRouteId_151 152 165
-queryPriceConfigByRouteIdAndTrainType_169 170 180
-/home/lei/train-ticket/ts-basic-service/src/main/java/fdse/microservice/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-consign-price-service/src/main/java/consignprice/ConsignPriceApplication.java
-restTemplate_35 36 36
-/home/lei/train-ticket/ts-consign-price-service/src/main/java/consignprice/controller/ConsignPriceController.java
-home_27 28 28
-getPriceByWeightAndRegion_32 34 35
-getPriceInfo_40 41 42
-getPriceConfig_46 47 48
-modifyPriceConfig_52 54 55
-/home/lei/train-ticket/ts-consign-price-service/src/main/java/consignprice/service/ConsignPriceServiceImpl.java
-getPriceByWeightAndRegion_26 27 40
-queryPriceInformation_44 45 56
-createAndModifyPrice_60 61 76
-getPriceConfig_80 81 81
-/home/lei/train-ticket/ts-consign-price-service/src/main/java/consignprice/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/PreserveOtherApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/entity/Order.java
+/users/leochanj/train-ticket/ts-cancel-service/src/main/java/cancel/entity/Order.java
 equals_68 69 70
 equals_68 69 73
 equals_68 69 76
 equals_68 69 79
 hashCode_97 98 100
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/entity/TravelResult.java
-isStatus_24 25 25
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/entity/Contacts.java
-equals_32 33 34
-equals_32 33 37
-equals_32 33 40
-equals_32 33 43
-hashCode_51 52 54
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/entity/TripId.java
-toString_38 39 39
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/controller/PreserveOtherController.java
-home_27 28 28
-preserve_33 35 36
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/service/PreserveOtherServiceImpl.java
-preserve_36 38 46
-preserve_36 38 57
-preserve_36 38 76
-preserve_36 38 83
-preserve_36 38 88
-preserve_36 38 160
-preserve_36 38 246
-dipatchSeat_249 250 265
-sendEmail_268 269 276
-sendEmail_268 269 279
-getAccount_282 283 293
-addAssuranceForOrder_298 299 308
-queryForStationId_312 313 323
-checkSecurity_326 327 336
-getTripAllDetailInformation_340 341 351
-getContactsById_354 355 365
-createOrder_368 369 380
-createFoodOrder_383 384 393
-createConsign_396 397 407
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/config/SecurityConfig.java
+/users/leochanj/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/AdminBasicInfoApplication.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/controller/AdminBasicInfoController.java
+home_26 27 27
+getAllContacts_32 33 34
+deleteContacts_39 40 41
+modifyContacts_46 47 48
+addContacts_53 54 55
+getAllStations_60 61 62
+deleteStation_67 68 69
+modifyStation_74 75 76
+addStation_81 82 83
+getAllTrains_88 89 90
+deleteTrain_95 96 97
+modifyTrain_102 103 104
+addTrain_109 110 111
+getAllConfigs_116 117 118
+deleteConfig_123 124 125
+modifyConfig_130 131 132
+addConfig_137 138 139
+getAllPrices_144 145 146
+deletePrice_151 152 153
+modifyPrice_158 159 160
+addPrice_165 166 167
+/users/leochanj/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/config/SecurityConfig.java
+passwordEncoder_35 36 36
+corsConfigurer_48 49 49
+/users/leochanj/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/service/AdminBasicInfoServiceImpl.java
+getAllContacts_33 34 44
+deleteContact_48 49 59
+modifyContact_63 64 74
+addContact_79 80 90
+getAllStations_94 96 103
+addStation_109 110 119
+deleteStation_123 124 133
+modifyStation_138 139 149
+getAllTrains_154 156 163
+addTrain_168 169 178
+deleteTrain_183 184 193
+modifyTrain_197 198 207
+getAllConfigs_211 214 221
+addConfig_225 228 234
+deleteConfig_238 240 246
+modifyConfig_250 253 259
+getAllPrices_263 266 274
+addPrice_278 280 286
+deletePrice_291 294 301
+modifyPrice_306 307 313
+/users/leochanj/train-ticket/ts-admin-basic-info-service/src/main/java/adminbasic/entity/Contacts.java
+equals_30 31 32
+equals_30 31 35
+equals_30 31 38
+equals_30 31 41
+hashCode_49 50 52
+/users/leochanj/train-ticket/ts-consign-service/src/main/java/consign/ConsignApplication.java
+restTemplate_27 28 28
+/users/leochanj/train-ticket/ts-consign-service/src/main/java/consign/controller/ConsignController.java
+home_29 30 30
+insertConsign_34 36 37
+updateConsign_41 42 43
+findByAccountId_47 48 50
+findByOrderId_54 55 57
+findByConsignee_61 62 63
+/users/leochanj/train-ticket/ts-consign-service/src/main/java/consign/config/SecurityConfig.java
 passwordEncoder_34 35 35
 corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/config/Queues.java
-emailQueue_13 14 14
-/home/lei/train-ticket/ts-route-plan-service/src/main/java/plan/RoutePlanApplication.java
+/users/leochanj/train-ticket/ts-consign-service/src/main/java/consign/service/ConsignServiceImpl.java
+insertConsignRecord_35 36 67
+updateConsignRecord_71 72 76
+updateConsignRecord_71 72 103
+queryByAccountId_107 108 110
+queryByAccountId_107 108 113
+queryByOrderId_118 119 121
+queryByOrderId_118 119 124
+queryByConsignee_129 130 132
+queryByConsignee_129 130 135
+/users/leochanj/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/TicketInfoApplication.java
+restTemplate_26 27 27
+/users/leochanj/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/controller/TicketInfoController.java
+home_28 29 29
+queryForTravel_33 35 36
+queryForStationId_40 42 43
+/users/leochanj/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/config/SecurityConfig.java
+passwordEncoder_27 28 28
+corsConfigurer_40 41 41
+/users/leochanj/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/service/TicketInfoServiceImpl.java
+queryForTravel_23 24 30
+queryForStationId_34 35 42
+/users/leochanj/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/entity/TripId.java
+toString_37 38 38
+/users/leochanj/train-ticket/ts-route-plan-service/src/main/java/plan/RoutePlanApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-route-plan-service/src/main/java/plan/entity/TripId.java
-toString_36 37 37
-/home/lei/train-ticket/ts-route-plan-service/src/main/java/plan/controller/RoutePlanController.java
+/users/leochanj/train-ticket/ts-route-plan-service/src/main/java/plan/controller/RoutePlanController.java
 home_26 27 27
 getCheapestRoutes_31 32 33
 getQuickestRoutes_37 38 39
 getMinStopStations_43 44 45
-/home/lei/train-ticket/ts-route-plan-service/src/main/java/plan/service/RoutePlanServiceImpl.java
+/users/leochanj/train-ticket/ts-route-plan-service/src/main/java/plan/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-route-plan-service/src/main/java/plan/service/RoutePlanServiceImpl.java
 searchCheapestResult_30 33 83
 searchQuickestResult_87 90 146
 searchMinStopStations_150 151 270
@@ -633,228 +413,19 @@ getRouteByRouteId_286 287 302
 getTripFromHighSpeedTravelServive_306 307 318
 getTripFromNormalTrainTravelService_321 322 332
 getStationList_335 337 351
-/home/lei/train-ticket/ts-route-plan-service/src/main/java/plan/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-verification-code-service/src/main/java/verifycode/util/CookieUtil.java
-getCookieByName_29 30 31
-readCookieMap_34 35 42
-/home/lei/train-ticket/ts-verification-code-service/src/main/java/verifycode/controller/VerifyCodeController.java
-verifyCode_49 51 55
-/home/lei/train-ticket/ts-verification-code-service/src/main/java/verifycode/service/impl/VerifyCodeServiceImpl.java
-getImageCode_50 51 109
-verifyCode_113 114 129
-verifyCode_113 114 134
-getRandColor_138 139 149
-/home/lei/train-ticket/ts-verification-code-service/src/main/java/verifycode/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-station-service/src/main/java/fdse/microservice/controller/StationController.java
-home_29 30 30
-query_34 35 35
-create_39 40 41
-update_45 46 47
-delete_51 52 53
-queryForStationId_60 63 64
-queryForIdBatch_70 71 72
-queryById_78 80 82
-queryForNameBatch_88 89 90
-/home/lei/train-ticket/ts-station-service/src/main/java/fdse/microservice/service/StationServiceImpl.java
-create_27 28 31
-create_27 28 34
-exist_39 40 44
-update_48 50 52
-update_48 50 57
-delete_62 64 67
-delete_62 64 70
-query_74 75 77
-query_74 75 80
-queryForId_85 86 89
-queryForId_85 86 92
-queryForIdBatch_98 99 110
-queryForIdBatch_98 99 113
-queryById_119 120 122
-queryById_119 120 125
-queryByIdBatch_130 131 140
-queryByIdBatch_130 131 143
-/home/lei/train-ticket/ts-station-service/src/main/java/fdse/microservice/config/SecurityConfig.java
-passwordEncoder_35 36 36
-corsConfigurer_48 49 49
-/home/lei/train-ticket/ts-payment-service/src/main/java/com/trainticket/controller/PaymentController.java
-home_28 29 29
-pay_33 34 35
-addMoney_39 40 41
-query_45 46 47
-/home/lei/train-ticket/ts-payment-service/src/main/java/com/trainticket/service/PaymentServiceImpl.java
-pay_32 34 40
-pay_32 34 43
-addMoney_48 49 53
-query_57 58 60
-query_57 58 63
-/home/lei/train-ticket/ts-payment-service/src/main/java/com/trainticket/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-food-service/src/main/java/foodsearch/FoodApplication.java
-restTemplate_25 26 26
-/home/lei/train-ticket/ts-food-service/src/main/java/foodsearch/controller/FoodController.java
-home_32 33 33
-test_send_delivery_37 38 46
-findAllFoodOrder_50 51 52
-createFoodOrder_56 57 58
-updateFoodOrder_62 63 64
-deleteFoodOrder_69 70 71
-findFoodOrderByOrderId_75 76 77
-getAllFood_82 85 86
-/home/lei/train-ticket/ts-food-service/src/main/java/foodsearch/service/FoodServiceImpl.java
-createFoodOrder_43 45 48
-createFoodOrder_43 45 77
-deleteFoodOrder_82 83 86
-deleteFoodOrder_82 83 90
-findAllFoodOrder_95 96 98
-findAllFoodOrder_95 96 101
-updateFoodOrder_107 108 111
-updateFoodOrder_107 108 122
-findByOrderId_127 128 131
-findByOrderId_127 128 134
-getAllFood_140 141 146
-getAllFood_140 141 169
-getAllFood_140 141 242
-getAllFood_140 141 246
-getAllFood_140 141 250
-/home/lei/train-ticket/ts-food-service/src/main/java/foodsearch/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-food-service/src/main/java/foodsearch/config/Queues.java
-emailQueue_13 14 14
-/home/lei/train-ticket/ts-food-map-service/src/main/java/food/controller/FoodStoreController.java
-home_25 26 26
-getAllFoodStores_31 32 33
-getFoodStoresOfStation_38 39 40
-getFoodStoresByStationIds_45 46 47
-/home/lei/train-ticket/ts-food-map-service/src/main/java/food/controller/TrainFoodController.java
-home_23 24 24
-getAllTrainFood_29 30 31
-getTrainFoodOfTrip_36 37 38
-/home/lei/train-ticket/ts-food-map-service/src/main/java/food/init/InitData.java
-toFoodList_90 91 103
-/home/lei/train-ticket/ts-food-map-service/src/main/java/food/service/FoodMapServiceImpl.java
-createFoodStore_32 33 36
-createFoodStore_32 33 39
-createTrainFood_44 45 51
-listFoodStores_55 56 58
-listFoodStores_55 56 61
-listTrainFood_66 67 69
-listTrainFood_66 67 72
-listFoodStoresByStationId_77 78 80
-listFoodStoresByStationId_77 78 83
-listTrainFoodByTripId_88 89 91
-listTrainFoodByTripId_88 89 94
-getFoodStoresByStationIds_99 100 102
-getFoodStoresByStationIds_99 100 105
-/home/lei/train-ticket/ts-food-map-service/src/main/java/food/config/SecurityConfig.java
-passwordEncoder_27 28 28
-corsConfigurer_40 41 41
-/home/lei/train-ticket/ts-contacts-service/src/main/java/contacts/ContactsApplication.java
+/users/leochanj/train-ticket/ts-route-plan-service/src/main/java/plan/entity/TripId.java
+toString_36 37 37
+/users/leochanj/train-ticket/ts-preserve-service/src/main/java/preserve/PreserveApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-contacts-service/src/main/java/contacts/entity/Contacts.java
-equals_37 38 39
-equals_37 38 42
-equals_37 38 45
-equals_37 38 48
-hashCode_56 57 59
-/home/lei/train-ticket/ts-contacts-service/src/main/java/contacts/controller/ContactsController.java
-home_30 31 31
-getAllContacts_36 37 38
-createNewContacts_43 45 46
-createNewContactsAdmin_51 52 54
-deleteContacts_60 61 61
-modifyContacts_67 68 69
-findContactsByAccountId_74 75 77
-getContactsByContactsId_82 83 85
-/home/lei/train-ticket/ts-contacts-service/src/main/java/contacts/service/ContactsServiceImpl.java
-findContactsById_30 31 34
-findContactsById_30 31 37
-findContactsByAccountId_42 43 45
-createContacts_49 50 53
-createContacts_49 50 56
-create_61 62 74
-create_61 62 78
-delete_83 84 88
-delete_83 84 91
-modify_96 97 103
-modify_96 97 111
-getAllContacts_116 117 119
-getAllContacts_116 117 122
-/home/lei/train-ticket/ts-contacts-service/src/main/java/contacts/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-admin-order-service/src/main/java/adminorder/AdminOrderApplication.java
-restTemplate_27 28 28
-/home/lei/train-ticket/ts-admin-order-service/src/main/java/adminorder/entity/Order.java
-equals_61 62 63
-equals_61 62 66
-equals_61 62 69
-equals_61 62 72
-hashCode_90 91 93
-/home/lei/train-ticket/ts-admin-order-service/src/main/java/adminorder/controller/AdminOrderController.java
-home_27 28 28
-getAllOrders_33 34 35
-addOrder_39 40 41
-updateOrder_45 46 47
-deleteOrder_51 52 53
-/home/lei/train-ticket/ts-admin-order-service/src/main/java/adminorder/service/AdminOrderServiceImpl.java
-getAllOrders_28 30 68
-deleteOrder_73 74 96
-updateOrder_101 103 127
-addOrder_131 133 155
-/home/lei/train-ticket/ts-admin-order-service/src/main/java/adminorder/config/SecurityConfig.java
-passwordEncoder_34 35 35
-corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-common/src/main/java/edu/fudan/common/util/JsonUtils.java
-object2Json_26 27 34
-object2Map_38 39 41
-jsonToMap_49 50 50
-json2Object_58 59 69
-conveterObject_73 74 75
-/home/lei/train-ticket/ts-common/src/main/java/edu/fudan/common/security/jwt/JWTUtil.java
-getAuthorities_40 41 41
-getPassword_45 46 46
-getUsername_50 51 51
-isAccountNonExpired_55 56 56
-isAccountNonLocked_60 61 61
-isCredentialsNonExpired_65 66 66
-isEnabled_70 71 71
-isEnabled_70 71 75
-isEnabled_70 71 77
-getUserName_80 81 81
-getRole_84 85 86
-getTokenFromHeader_89 90 92
-getTokenFromHeader_89 90 94
-validateToken_97 98 100
-getClaims_119 120 120
-/home/lei/train-ticket/ts-common/src/main/java/edu/fudan/common/config/SwaggerConfig.java
-createRestApi_27 28 29
-apiInfo_36 37 37
-/home/lei/train-ticket/ts-preserve-service/src/main/java/preserve/PreserveApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-preserve-service/src/main/java/preserve/entity/Order.java
-equals_68 69 70
-equals_68 69 73
-equals_68 69 76
-equals_68 69 79
-hashCode_97 98 100
-/home/lei/train-ticket/ts-preserve-service/src/main/java/preserve/entity/Contacts.java
-equals_32 33 34
-equals_32 33 37
-equals_32 33 40
-equals_32 33 43
-hashCode_51 52 54
-/home/lei/train-ticket/ts-preserve-service/src/main/java/preserve/entity/TripId.java
-toString_38 39 39
-/home/lei/train-ticket/ts-preserve-service/src/main/java/preserve/controller/PreserveController.java
+/users/leochanj/train-ticket/ts-preserve-service/src/main/java/preserve/controller/PreserveController.java
 home_27 28 28
 preserve_33 35 36
-/home/lei/train-ticket/ts-preserve-service/src/main/java/preserve/service/PreserveServiceImpl.java
+/users/leochanj/train-ticket/ts-preserve-service/src/main/java/preserve/config/Queues.java
+emailQueue_13 14 14
+/users/leochanj/train-ticket/ts-preserve-service/src/main/java/preserve/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-preserve-service/src/main/java/preserve/service/PreserveServiceImpl.java
 preserve_36 38 43
 preserve_36 38 53
 preserve_36 38 71
@@ -874,32 +445,95 @@ getContactsById_349 350 360
 createOrder_363 364 374
 createFoodOrder_377 378 387
 createConsign_390 391 399
-/home/lei/train-ticket/ts-preserve-service/src/main/java/preserve/config/SecurityConfig.java
+/users/leochanj/train-ticket/ts-preserve-service/src/main/java/preserve/entity/Contacts.java
+equals_32 33 34
+equals_32 33 37
+equals_32 33 40
+equals_32 33 43
+hashCode_51 52 54
+/users/leochanj/train-ticket/ts-preserve-service/src/main/java/preserve/entity/TripId.java
+toString_38 39 39
+/users/leochanj/train-ticket/ts-preserve-service/src/main/java/preserve/entity/Order.java
+equals_68 69 70
+equals_68 69 73
+equals_68 69 76
+equals_68 69 79
+hashCode_97 98 100
+/users/leochanj/train-ticket/ts-security-service/src/main/java/security/SecurityApplication.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-security-service/src/main/java/security/controller/SecurityController.java
+home_27 28 28
+findAllSecurityConfig_33 34 35
+create_40 41 42
+update_47 48 49
+delete_54 55 56
+check_61 62 63
+/users/leochanj/train-ticket/ts-security-service/src/main/java/security/config/SecurityConfig.java
 passwordEncoder_34 35 35
 corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-preserve-service/src/main/java/preserve/config/Queues.java
-emailQueue_13 14 14
-/home/lei/train-ticket/ts-order-service/src/main/java/order/OrderApplication.java
+/users/leochanj/train-ticket/ts-security-service/src/main/java/security/service/SecurityServiceImpl.java
+findAllSecurityConfig_39 40 42
+findAllSecurityConfig_39 40 45
+addNewSecurityConfig_49 50 53
+addNewSecurityConfig_49 50 61
+modifySecurityConfig_66 67 70
+modifySecurityConfig_66 67 76
+deleteSecurityConfig_81 82 85
+deleteSecurityConfig_81 82 88
+check_93 95 109
+check_93 95 111
+getSecurityOrderInfoFromOrder_115 116 127
+getSecurityOrderOtherInfoFromOrder_130 131 142
+/users/leochanj/train-ticket/ts-security-service/src/main/java/security/entity/Order.java
+equals_70 71 72
+equals_70 71 75
+equals_70 71 78
+equals_70 71 81
+hashCode_99 100 102
+/users/leochanj/train-ticket/ts-user-service/src/main/java/user/controller/UserController.java
+testHello_31 32 32
+getAllUser_36 37 38
+getUserByUserName_42 43 44
+getUserByUserId_47 48 49
+registerUser_53 54 55
+deleteUserById_60 63 64
+updateUser_68 70 71
+/users/leochanj/train-ticket/ts-user-service/src/main/java/user/config/SecurityConfig.java
+passwordEncoder_35 36 36
+corsConfigurer_48 49 49
+/users/leochanj/train-ticket/ts-user-service/src/main/java/user/service/impl/UserServiceImpl.java
+saveUser_35 36 62
+saveUser_35 36 65
+createDefaultAuthUser_69 70 79
+getAllUsers_83 84 86
+getAllUsers_83 84 89
+findByUserName_93 94 96
+findByUserName_93 94 99
+findByUserId_103 104 106
+findByUserId_103 104 109
+deleteUser_113 114 122
+deleteUser_113 114 125
+updateUser_130 131 143
+updateUser_130 131 146
+/users/leochanj/train-ticket/ts-consign-price-service/src/main/java/consignprice/ConsignPriceApplication.java
+restTemplate_35 36 36
+/users/leochanj/train-ticket/ts-consign-price-service/src/main/java/consignprice/controller/ConsignPriceController.java
+home_27 28 28
+getPriceByWeightAndRegion_32 34 35
+getPriceInfo_40 41 42
+getPriceConfig_46 47 48
+modifyPriceConfig_52 54 55
+/users/leochanj/train-ticket/ts-consign-price-service/src/main/java/consignprice/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-consign-price-service/src/main/java/consignprice/service/ConsignPriceServiceImpl.java
+getPriceByWeightAndRegion_26 27 40
+queryPriceInformation_44 45 56
+createAndModifyPrice_60 61 76
+getPriceConfig_80 81 81
+/users/leochanj/train-ticket/ts-order-service/src/main/java/order/OrderApplication.java
 restTemplate_27 28 28
-/home/lei/train-ticket/ts-order-service/src/main/java/order/entity/Order.java
-equals_77 78 79
-equals_77 78 82
-equals_77 78 85
-equals_77 78 88
-hashCode_106 107 109
-/home/lei/train-ticket/ts-order-service/src/main/java/order/entity/OrderInfo.java
-getLoginId_38 39 39
-getTravelDateStart_46 47 47
-getTravelDateEnd_50 51 51
-getBoughtDateStart_54 55 55
-getBoughtDateEnd_58 59 59
-getState_62 63 63
-isEnableTravelDateQuery_100 101 101
-isEnableBoughtDateQuery_104 105 105
-isEnableStateQuery_108 109 109
-/home/lei/train-ticket/ts-order-service/src/main/java/order/entity/LeftTicketInfo.java
-toString_23 24 24
-/home/lei/train-ticket/ts-order-service/src/main/java/order/controller/OrderController.java
+/users/leochanj/train-ticket/ts-order-service/src/main/java/order/controller/OrderController.java
 home_29 30 30
 getTicketListByDateAndTripId_36 37 38
 createNewOrder_43 44 46
@@ -916,7 +550,10 @@ saveOrderInfo_125 128 129
 updateOrder_134 136 137
 deleteOrder_143 144 146
 findAllOrder_153 154 156
-/home/lei/train-ticket/ts-order-service/src/main/java/order/service/OrderServiceImpl.java
+/users/leochanj/train-ticket/ts-order-service/src/main/java/order/config/SecurityConfig.java
+passwordEncoder_38 39 39
+corsConfigurer_51 52 52
+/users/leochanj/train-ticket/ts-order-service/src/main/java/order/service/OrderServiceImpl.java
 getSoldTickets_37 38 49
 getSoldTickets_37 38 52
 findOrderById_57 58 61
@@ -952,20 +589,145 @@ addNewOrder_386 387 391
 addNewOrder_386 387 397
 updateOrder_402 403 407
 updateOrder_402 403 427
-/home/lei/train-ticket/ts-order-service/src/main/java/order/config/SecurityConfig.java
-passwordEncoder_38 39 39
-corsConfigurer_51 52 52
-/home/lei/train-ticket/ts-travel-plan-service/src/main/java/travelplan/TravelPlanApplication.java
+/users/leochanj/train-ticket/ts-order-service/src/main/java/order/entity/LeftTicketInfo.java
+toString_23 24 24
+/users/leochanj/train-ticket/ts-order-service/src/main/java/order/entity/OrderInfo.java
+getLoginId_38 39 39
+getTravelDateStart_46 47 47
+getTravelDateEnd_50 51 51
+getBoughtDateStart_54 55 55
+getBoughtDateEnd_58 59 59
+getState_62 63 63
+isEnableTravelDateQuery_100 101 101
+isEnableBoughtDateQuery_104 105 105
+isEnableStateQuery_108 109 109
+/users/leochanj/train-ticket/ts-order-service/src/main/java/order/entity/Order.java
+equals_77 78 79
+equals_77 78 82
+equals_77 78 85
+equals_77 78 88
+hashCode_106 107 109
+/users/leochanj/train-ticket/ts-food-service/src/main/java/foodsearch/FoodApplication.java
+restTemplate_25 26 26
+/users/leochanj/train-ticket/ts-food-service/src/main/java/foodsearch/controller/FoodController.java
+home_32 33 33
+test_send_delivery_37 38 46
+findAllFoodOrder_50 51 52
+createFoodOrder_56 57 58
+updateFoodOrder_62 63 64
+deleteFoodOrder_69 70 71
+findFoodOrderByOrderId_75 76 77
+getAllFood_82 85 86
+/users/leochanj/train-ticket/ts-food-service/src/main/java/foodsearch/config/Queues.java
+emailQueue_13 14 14
+/users/leochanj/train-ticket/ts-food-service/src/main/java/foodsearch/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-food-service/src/main/java/foodsearch/service/FoodServiceImpl.java
+createFoodOrder_43 45 48
+createFoodOrder_43 45 77
+deleteFoodOrder_82 83 86
+deleteFoodOrder_82 83 90
+findAllFoodOrder_95 96 98
+findAllFoodOrder_95 96 101
+updateFoodOrder_107 108 111
+updateFoodOrder_107 108 122
+findByOrderId_127 128 131
+findByOrderId_127 128 134
+getAllFood_140 141 146
+getAllFood_140 141 169
+getAllFood_140 141 242
+getAllFood_140 141 246
+getAllFood_140 141 250
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/PreserveOtherApplication.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/controller/PreserveOtherController.java
+home_27 28 28
+preserve_33 35 36
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/config/Queues.java
+emailQueue_13 14 14
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/service/PreserveOtherServiceImpl.java
+preserve_36 38 46
+preserve_36 38 57
+preserve_36 38 76
+preserve_36 38 83
+preserve_36 38 88
+preserve_36 38 160
+preserve_36 38 246
+dipatchSeat_249 250 265
+sendEmail_268 269 276
+sendEmail_268 269 279
+getAccount_282 283 293
+addAssuranceForOrder_298 299 308
+queryForStationId_312 313 323
+checkSecurity_326 327 336
+getTripAllDetailInformation_340 341 351
+getContactsById_354 355 365
+createOrder_368 369 380
+createFoodOrder_383 384 393
+createConsign_396 397 407
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/entity/TravelResult.java
+isStatus_24 25 25
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/entity/Contacts.java
+equals_32 33 34
+equals_32 33 37
+equals_32 33 40
+equals_32 33 43
+hashCode_51 52 54
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/entity/TripId.java
+toString_38 39 39
+/users/leochanj/train-ticket/ts-preserve-other-service/src/main/java/preserveOther/entity/Order.java
+equals_68 69 70
+equals_68 69 73
+equals_68 69 76
+equals_68 69 79
+hashCode_97 98 100
+/users/leochanj/train-ticket/ts-notification-service/src/main/java/notification/NotificationApplication.java
+restTemplate_21 22 22
+/users/leochanj/train-ticket/ts-notification-service/src/main/java/notification/controller/NotificationController.java
+home_29 30 30
+test_send_34 35 36
+test_send_mail_40 41 54
+preserve_success_58 59 59
+order_create_success_63 64 64
+order_changed_success_68 69 69
+order_cancel_success_73 74 74
+/users/leochanj/train-ticket/ts-notification-service/src/main/java/notification/config/Queues.java
+emailQueue_13 14 14
+/users/leochanj/train-ticket/ts-notification-service/src/main/java/notification/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-notification-service/src/main/java/notification/config/EmailProperties.java
+getHost_22 23 23
+getPort_30 31 31
+getUsername_38 39 39
+getPassword_46 47 47
+/users/leochanj/train-ticket/ts-notification-service/src/main/java/notification/mq/RabbitReceive.java
+process_52 53 57
+/users/leochanj/train-ticket/ts-notification-service/src/main/java/notification/service/NotificationServiceImpl.java
+preserveSuccess_37 38 56
+preserveSuccess_37 38 59
+orderCreateSuccess_64 65 83
+orderCreateSuccess_64 65 86
+orderChangedSuccess_91 92 110
+orderChangedSuccess_91 92 113
+orderCancelSuccess_118 119 131
+orderCancelSuccess_118 119 134
+/users/leochanj/train-ticket/ts-travel-plan-service/src/main/java/travelplan/TravelPlanApplication.java
 restTemplate_27 28 28
-/home/lei/train-ticket/ts-travel-plan-service/src/main/java/travelplan/entity/TripId.java
-toString_41 42 42
-/home/lei/train-ticket/ts-travel-plan-service/src/main/java/travelplan/controller/TravelPlanController.java
+/users/leochanj/train-ticket/ts-travel-plan-service/src/main/java/travelplan/controller/TravelPlanController.java
 home_28 29 29
 getTransferResult_33 34 35
 getByCheapest_39 40 41
 getByQuickest_45 46 47
 getByMinStation_51 52 53
-/home/lei/train-ticket/ts-travel-plan-service/src/main/java/travelplan/service/TravelPlanServiceImpl.java
+/users/leochanj/train-ticket/ts-travel-plan-service/src/main/java/travelplan/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-travel-plan-service/src/main/java/travelplan/service/TravelPlanServiceImpl.java
 getTransferSearch_35 37 69
 getCheapest_73 74 107
 getCheapest_73 74 110
@@ -981,194 +743,176 @@ tripsFromHighSpeed_260 261 268
 tripsFromNormal_271 273 281
 queryForStationId_284 286 294
 transferStationIdToStationName_297 298 306
-/home/lei/train-ticket/ts-travel-plan-service/src/main/java/travelplan/config/SecurityConfig.java
+/users/leochanj/train-ticket/ts-travel-plan-service/src/main/java/travelplan/entity/TripId.java
+toString_41 42 42
+/users/leochanj/train-ticket/ts-train-service/src/main/java/train/controller/TrainController.java
+home_29 30 30
+create_35 36 39
+create_35 36 41
+retrieve_47 48 51
+retrieve_47 48 53
+update_59 60 63
+update_59 60 65
+delete_71 72 75
+delete_71 72 77
+query_83 84 87
+query_83 84 89
+/users/leochanj/train-ticket/ts-train-service/src/main/java/train/config/SecurityConfig.java
 passwordEncoder_34 35 35
 corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/AuthApplication.java
-restTemplate_20 21 21
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/entity/User.java
-getAuthorities_35 36 36
-getPassword_40 41 41
-getUsername_45 46 46
-isAccountNonExpired_50 51 51
-isAccountNonLocked_55 56 56
-isCredentialsNonExpired_60 61 61
-isEnabled_65 66 66
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/controller/AuthController.java
-getHello_32 33 33
-createDefaultUser_37 38 41
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/controller/UserController.java
-getHello_37 38 38
-getToken_42 43 46
-getToken_42 43 49
-getAllUser_54 55 56
-deleteUserById_60 61 62
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/security/UserDetailsServiceImpl.java
-loadUserByUsername_27 28 29
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/security/jwt/JWTProvider.java
-createToken_29 31 38
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/exception/handler/GlobalExceptionHandler.java
-handleUserNotFoundException_17 18 18
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/service/impl/TokenServiceImpl.java
-getToken_48 49 66
-getToken_48 49 76
-getToken_48 49 86
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/service/impl/UserServiceImpl.java
-saveUser_35 36 36
-getAllUser_40 41 41
-createDefaultAuthUser_51 52 64
-deleteByUserId_68 69 71
-/home/lei/train-ticket/ts-auth-service/src/main/java/auth/config/WebSecurityConfig.java
-authenticationManager_42 43 43
-corsConfigurer_54 55 55
-passwordEncoder_74 75 75
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/JVMAgent.java
-getLoader_44 45 45
-get_48 50 51
-get_48 50 67
-get_48 50 71
-get_48 50 82
-getClassWithAgent_107 108 109
-getClassWithAgent_107 108 112
-transform_142 145 147
-transform_142 145 150
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/DynamicInstrumentation.java
-get_20 21 24
-create_61 63 88
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/ExampleDynamicInstrumentation.java
-affects_47 48 48
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/JDWPAgent.java
-getLoader_25 26 26
-get_30 32 33
-get_30 32 44
-get_30 32 51
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/edu/brown/cs/systems/dynamicinstrumentation/DynamicManager.java
-add_28 29 30
-addAll_33 34 37
-remove_40 41 42
-removeAll_45 46 49
-refresh_52 53 54
-reset_57 58 59
-cancelPending_62 63 64
-clear_67 68 71
-affects_104 105 112
-changes_115 117 136
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/com/agent/LumosAgent.java
-transform_32 40 58
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/com/agent/TimingModification.java
-affects_29 30 30
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/com/agent/SimpleTransformer.java
-transform_17 19 19
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/com/agent/AnnotationModification.java
-affects_32 33 33
-/home/lei/train-ticket/lumos/LumosAgent/src/main/java/com/agent/InstructionModification.java
-affects_28 29 29
-/home/lei/train-ticket/ts-config-service/src/main/java/config/SecurityConfig.java
-passwordEncoder_37 38 38
-corsConfigurer_50 51 51
-/home/lei/train-ticket/ts-config-service/src/main/java/config/ConfigApplication.java
+/users/leochanj/train-ticket/ts-train-service/src/main/java/train/service/TrainServiceImpl.java
+create_22 23 33
+retrieve_37 38 40
+retrieve_37 38 42
+update_47 48 58
+delete_62 63 71
+query_75 76 76
+/users/leochanj/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/InsidePaymentApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-config-service/src/main/java/config/controller/ConfigController.java
-home_31 32 32
-queryAll_37 38 39
-createConfig_44 45 46
-updateConfig_51 52 53
-deleteConfig_59 60 61
-retrieve_66 67 68
-/home/lei/train-ticket/ts-config-service/src/main/java/config/service/ConfigServiceImpl.java
-create_29 30 33
-create_29 30 38
-update_43 44 47
-update_43 44 52
-query_58 59 62
-query_58 59 65
-delete_70 71 75
-delete_70 71 79
-queryAll_84 85 89
-queryAll_84 85 92
-/home/lei/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/TicketInfoApplication.java
-restTemplate_26 27 27
-/home/lei/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/entity/TripId.java
-toString_37 38 38
-/home/lei/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/controller/TicketInfoController.java
-home_28 29 29
-queryForTravel_33 35 36
-queryForStationId_40 42 43
-/home/lei/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/service/TicketInfoServiceImpl.java
-queryForTravel_23 24 30
-queryForStationId_34 35 42
-/home/lei/train-ticket/ts-ticketinfo-service/src/main/java/ticketinfo/config/SecurityConfig.java
-passwordEncoder_27 28 28
-corsConfigurer_40 41 41
-/home/lei/train-ticket/ts-rebook-service/src/main/java/rebook/RebookApplication.java
+/users/leochanj/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/util/CookieUtil.java
+getCookieByName_29 30 32
+getCookieByName_29 30 34
+readCookieMap_38 39 46
+/users/leochanj/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/controller/InsidePaymentController.java
+home_27 28 28
+pay_32 33 34
+createAccount_38 39 40
+addMoney_44 46 47
+queryPayment_51 52 53
+queryAccount_57 58 59
+drawBack_63 64 65
+payDifference_69 70 71
+queryAddMoney_75 76 77
+/users/leochanj/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/async/ExecutorConfig.java
+mySimpleAsync_25 26 32
+myAsync_36 37 47
+/users/leochanj/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/async/AsyncTask.java
+sendAsyncCallToPaymentService_25 26 29
+/users/leochanj/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/service/InsidePaymentServiceImpl.java
+pay_39 41 63
+pay_39 41 112
+pay_39 41 115
+pay_39 41 123
+pay_39 41 127
+createAccount_132 133 140
+createAccount_132 133 143
+addMoney_148 149 155
+addMoney_148 149 158
+queryAccount_163 164 199
+queryAccount_202 203 220
+queryPayment_224 225 227
+queryPayment_224 225 230
+drawBack_235 236 242
+drawBack_235 236 245
+payDifference_250 252 296
+payDifference_250 252 299
+payDifference_250 252 305
+queryAddMoney_309 310 312
+queryAddMoney_309 310 315
+setOrderStatus_319 322 344
+/users/leochanj/train-ticket/ts-inside-payment-service/src/main/java/inside_payment/entity/Order.java
+equals_70 71 72
+equals_70 71 75
+equals_70 71 78
+equals_70 71 81
+hashCode_99 100 102
+/users/leochanj/train-ticket/ts-seat-service/src/main/java/seat/SeatApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-rebook-service/src/main/java/rebook/entity/Order.java
-equals_71 72 73
-equals_71 72 76
-equals_71 72 79
-equals_71 72 82
-hashCode_100 101 103
-/home/lei/train-ticket/ts-rebook-service/src/main/java/rebook/entity/Contacts.java
+/users/leochanj/train-ticket/ts-seat-service/src/main/java/seat/controller/SeatController.java
+home_27 28 28
+create_40 41 42
+getLeftTicketOfInterval_55 57 58
+/users/leochanj/train-ticket/ts-seat-service/src/main/java/seat/config/SecurityConfig.java
+passwordEncoder_35 36 36
+corsConfigurer_48 49 49
+/users/leochanj/train-ticket/ts-seat-service/src/main/java/seat/service/SeatServiceImpl.java
+nextInt_54 55 58
+distributeSeat_63 64 183
+distributeSeat_63 64 207
+isContained_210 212 215
+isContained_210 212 218
+getLeftTicketOfInterval_222 223 352
+getDirectProportion_355 357 367
+/users/leochanj/train-ticket/ts-seat-service/src/main/java/seat/entity/Seat.java
+toString_45 46 46
+/users/leochanj/train-ticket/ts-seat-service/src/main/java/seat/entity/LeftTicketInfo.java
+toString_23 24 24
+/users/leochanj/train-ticket/ts-basic-service/src/main/java/fdse/microservice/BasicApplication.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-basic-service/src/main/java/fdse/microservice/controller/BasicController.java
+home_29 30 30
+queryForTravel_34 36 37
+queryForStationId_41 43 44
+/users/leochanj/train-ticket/ts-basic-service/src/main/java/fdse/microservice/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-basic-service/src/main/java/fdse/microservice/service/BasicServiceImpl.java
+queryForTravel_30 32 104
+queryForStationId_109 110 120
+queryForStationId_109 110 122
+checkStationExists_125 126 135
+queryTrainType_138 139 148
+getRouteByRouteId_151 152 162
+getRouteByRouteId_151 152 165
+queryPriceConfigByRouteIdAndTrainType_169 170 180
+/users/leochanj/train-ticket/ts-basic-service/src/main/java/fdse/microservice/entity/TravelResult.java
+isStatus_21 22 22
+/users/leochanj/train-ticket/ts-basic-service/src/main/java/fdse/microservice/entity/Contacts.java
 equals_32 33 34
 equals_32 33 37
 equals_32 33 40
 equals_32 33 43
 hashCode_51 52 54
-/home/lei/train-ticket/ts-rebook-service/src/main/java/rebook/entity/TripId.java
-toString_40 41 41
-/home/lei/train-ticket/ts-rebook-service/src/main/java/rebook/controller/RebookController.java
-home_27 28 28
-payDifference_32 34 35
-rebook_39 40 41
-/home/lei/train-ticket/ts-rebook-service/src/main/java/rebook/service/RebookServiceImpl.java
-rebook_33 35 40
-rebook_33 35 44
-rebook_33 35 51
-rebook_33 35 56
-rebook_33 35 59
-rebook_33 35 62
-rebook_33 35 68
-rebook_33 35 81
-rebook_33 35 87
-rebook_33 35 92
-rebook_33 35 114
-rebook_33 35 116
-rebook_33 35 120
-rebook_33 35 126
-payDifference_131 132 137
-payDifference_131 132 161
-payDifference_131 132 164
-updateOrder_168 171 203
-updateOrder_168 171 206
-updateOrder_168 171 213
-dipatchSeat_217 218 233
-tripGD_237 238 238
-checkTime_241 242 267
-getTripAllDetailInformation_271 272 290
-createOrder_293 294 309
-updateOrder_312 313 326
-deleteOrder_329 331 345
-getOrderByRebookInfo_348 349 366
-queryForStationName_369 370 378
-payDifferentMoney_381 382 396
-drawBackMoney_399 401 409
-getAuthorizationHeadersFrom_412 413 417
-/home/lei/train-ticket/ts-rebook-service/src/main/java/rebook/config/SecurityConfig.java
+/users/leochanj/train-ticket/ts-basic-service/src/main/java/fdse/microservice/entity/TripId.java
+toString_37 38 38
+/users/leochanj/train-ticket/ts-verification-code-service/src/main/java/verifycode/util/CookieUtil.java
+getCookieByName_29 30 31
+readCookieMap_34 35 42
+/users/leochanj/train-ticket/ts-verification-code-service/src/main/java/verifycode/controller/VerifyCodeController.java
+verifyCode_49 51 55
+/users/leochanj/train-ticket/ts-verification-code-service/src/main/java/verifycode/config/SecurityConfig.java
 passwordEncoder_34 35 35
 corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-delivery-service/src/main/java/delivery/DeliveryApplication.java
+/users/leochanj/train-ticket/ts-verification-code-service/src/main/java/verifycode/service/impl/VerifyCodeServiceImpl.java
+getImageCode_50 51 109
+verifyCode_113 114 129
+verifyCode_113 114 134
+getRandColor_138 139 149
+/users/leochanj/train-ticket/ts-delivery-service/src/main/java/delivery/DeliveryApplication.java
 restTemplate_23 24 24
-/home/lei/train-ticket/ts-delivery-service/src/main/java/delivery/mq/RabbitReceive.java
-process_36 37 41
-/home/lei/train-ticket/ts-delivery-service/src/main/java/delivery/config/Queues.java
+/users/leochanj/train-ticket/ts-delivery-service/src/main/java/delivery/config/Queues.java
 emailQueue_13 14 14
-/home/lei/train-ticket/ts-travel2-service/src/main/java/travel2/Travel2Application.java
+/users/leochanj/train-ticket/ts-delivery-service/src/main/java/delivery/mq/RabbitReceive.java
+process_36 37 41
+/users/leochanj/train-ticket/ts-price-service/src/main/java/price/PriceApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-travel2-service/src/main/java/travel2/entity/TravelResult.java
-isStatus_24 25 25
-/home/lei/train-ticket/ts-travel2-service/src/main/java/travel2/entity/TripId.java
-toString_36 37 37
-/home/lei/train-ticket/ts-travel2-service/src/main/java/travel2/controller/Travel2Controller.java
+/users/leochanj/train-ticket/ts-price-service/src/main/java/price/controller/PriceController.java
+home_28 29 29
+query_33 35 36
+queryAll_40 41 42
+create_46 48 49
+delete_53 54 55
+update_59 60 61
+/users/leochanj/train-ticket/ts-price-service/src/main/java/price/config/SecurityConfig.java
+passwordEncoder_38 39 39
+corsConfigurer_51 52 52
+/users/leochanj/train-ticket/ts-price-service/src/main/java/price/service/PriceServiceImpl.java
+createNewPriceConfig_31 32 56
+findById_60 61 62
+findByRouteIdAndTrainType_66 67 73
+findByRouteIdAndTrainType_66 67 75
+findAllPriceConfig_81 82 89
+findAllPriceConfig_81 82 91
+deletePriceConfig_97 98 101
+deletePriceConfig_97 98 110
+updatePriceConfig_115 116 119
+updatePriceConfig_115 116 127
+/users/leochanj/train-ticket/ts-travel2-service/src/main/java/travel2/Travel2Application.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-travel2-service/src/main/java/travel2/controller/Travel2Controller.java
 home_31 32 32
 getTrainTypeByTripId_36 39 40
 getRouteByTripId_44 46 48
@@ -1182,7 +926,10 @@ queryInfo_107 108 116
 getTripAllDetailInfo_128 129 130
 queryAll_135 137 138
 adminQueryAll_143 145 146
-/home/lei/train-ticket/ts-travel2-service/src/main/java/travel2/service/Travel2ServiceImpl.java
+/users/leochanj/train-ticket/ts-travel2-service/src/main/java/travel2/config/SecurityConfig.java
+passwordEncoder_38 39 39
+corsConfigurer_51 52 52
+/users/leochanj/train-ticket/ts-travel2-service/src/main/java/travel2/service/Travel2ServiceImpl.java
 getRouteByTripId_38 39 44
 getRouteByTripId_38 39 49
 getRouteByTripId_38 39 52
@@ -1218,79 +965,332 @@ getRouteByRouteId_366 367 381
 getRestTicketNumber_385 386 408
 adminQueryAll_412 413 423
 adminQueryAll_412 413 426
-/home/lei/train-ticket/ts-travel2-service/src/main/java/travel2/config/SecurityConfig.java
-passwordEncoder_38 39 39
-corsConfigurer_51 52 52
-/home/lei/train-ticket/ts-admin-travel-service/src/main/java/admintravel/AdminTravelApplication.java
-restTemplate_27 28 28
-/home/lei/train-ticket/ts-admin-travel-service/src/main/java/admintravel/entity/TripId.java
-toString_39 40 40
-/home/lei/train-ticket/ts-admin-travel-service/src/main/java/admintravel/controller/AdminTravelController.java
-home_26 27 27
-getAllTravels_32 33 34
-addTravel_38 39 41
-updateTravel_45 46 48
-deleteTravel_52 53 54
-/home/lei/train-ticket/ts-admin-travel-service/src/main/java/admintravel/service/AdminTravelServiceImpl.java
-getAllTravels_30 31 70
-addTravel_74 75 92
-addTravel_74 75 95
-updateTravel_100 101 119
-updateTravel_100 101 123
-deleteTravel_127 129 146
-deleteTravel_127 129 150
-/home/lei/train-ticket/ts-admin-travel-service/src/main/java/admintravel/config/SecurityConfig.java
+/users/leochanj/train-ticket/ts-travel2-service/src/main/java/travel2/entity/TravelResult.java
+isStatus_24 25 25
+/users/leochanj/train-ticket/ts-travel2-service/src/main/java/travel2/entity/TripId.java
+toString_36 37 37
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/AuthApplication.java
+restTemplate_20 21 21
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/controller/AuthController.java
+getHello_32 33 33
+createDefaultUser_37 38 41
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/controller/UserController.java
+getHello_37 38 38
+getToken_42 43 46
+getToken_42 43 49
+getAllUser_54 55 56
+deleteUserById_60 61 62
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/exception/handler/GlobalExceptionHandler.java
+handleUserNotFoundException_17 18 18
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/config/WebSecurityConfig.java
+authenticationManager_42 43 43
+corsConfigurer_54 55 55
+passwordEncoder_74 75 75
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/service/impl/UserServiceImpl.java
+saveUser_35 36 36
+getAllUser_40 41 41
+createDefaultAuthUser_51 52 64
+deleteByUserId_68 69 71
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/service/impl/TokenServiceImpl.java
+getToken_48 49 66
+getToken_48 49 76
+getToken_48 49 86
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/entity/User.java
+getAuthorities_35 36 36
+getPassword_40 41 41
+getUsername_45 46 46
+isAccountNonExpired_50 51 51
+isAccountNonLocked_55 56 56
+isCredentialsNonExpired_60 61 61
+isEnabled_65 66 66
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/security/UserDetailsServiceImpl.java
+loadUserByUsername_27 28 29
+/users/leochanj/train-ticket/ts-auth-service/src/main/java/auth/security/jwt/JWTProvider.java
+createToken_29 31 38
+/users/leochanj/train-ticket/ts-assurance-service/src/main/java/assurance/AssuranceApplication.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-assurance-service/src/main/java/assurance/controller/AssuranceController.java
+home_28 29 29
+getAllAssurances_34 35 36
+getAllAssuranceType_41 42 43
+deleteAssurance_48 49 50
+deleteAssuranceByOrderId_55 56 57
+modifyAssurance_62 65 67
+createNewAssurance_73 75 76
+getAssuranceById_81 82 83
+findAssuranceByOrderId_88 89 90
+/users/leochanj/train-ticket/ts-assurance-service/src/main/java/assurance/config/SecurityConfig.java
 passwordEncoder_34 35 35
 corsConfigurer_47 48 48
-/home/lei/train-ticket/ts-seat-service/src/main/java/seat/SeatApplication.java
-restTemplate_28 29 29
-/home/lei/train-ticket/ts-seat-service/src/main/java/seat/entity/Seat.java
-toString_45 46 46
-/home/lei/train-ticket/ts-seat-service/src/main/java/seat/entity/LeftTicketInfo.java
-toString_23 24 24
-/home/lei/train-ticket/ts-seat-service/src/main/java/seat/controller/SeatController.java
-home_27 28 28
-create_40 41 42
-getLeftTicketOfInterval_55 57 58
-/home/lei/train-ticket/ts-seat-service/src/main/java/seat/service/SeatServiceImpl.java
-nextInt_54 55 58
-distributeSeat_63 64 181
-distributeSeat_63 64 202
-isContained_205 207 210
-isContained_205 207 213
-getLeftTicketOfInterval_217 218 347
-getDirectProportion_350 352 362
-/home/lei/train-ticket/ts-seat-service/src/main/java/seat/config/SecurityConfig.java
+/users/leochanj/train-ticket/ts-assurance-service/src/main/java/assurance/service/AssuranceServiceImpl.java
+findAssuranceById_28 29 32
+findAssuranceById_28 29 35
+findAssuranceByOrderId_40 41 44
+findAssuranceByOrderId_40 41 47
+create_52 53 57
+create_52 53 60
+create_52 53 65
+deleteById_70 71 75
+deleteById_70 71 78
+deleteByOrderId_83 84 88
+deleteByOrderId_83 84 91
+modify_96 97 101
+modify_96 97 108
+modify_96 97 111
+getAllAssurances_117 118 131
+getAllAssurances_117 118 134
+getAllAssuranceTypes_139 141 151
+getAllAssuranceTypes_139 141 154
+/users/leochanj/train-ticket/ts-station-service/src/main/java/fdse/microservice/controller/StationController.java
+home_29 30 30
+query_34 35 35
+create_39 40 41
+update_45 46 47
+delete_51 52 53
+queryForStationId_60 63 64
+queryForIdBatch_70 71 72
+queryById_78 80 82
+queryForNameBatch_88 89 90
+/users/leochanj/train-ticket/ts-station-service/src/main/java/fdse/microservice/config/SecurityConfig.java
 passwordEncoder_35 36 36
 corsConfigurer_48 49 49
-/home/lei/train-ticket/ts-security-service/src/main/java/security/SecurityApplication.java
+/users/leochanj/train-ticket/ts-station-service/src/main/java/fdse/microservice/service/StationServiceImpl.java
+create_27 28 31
+create_27 28 34
+exist_39 40 44
+update_48 50 52
+update_48 50 57
+delete_62 64 67
+delete_62 64 70
+query_74 75 77
+query_74 75 80
+queryForId_85 86 89
+queryForId_85 86 92
+queryForIdBatch_98 99 110
+queryForIdBatch_98 99 113
+queryById_119 120 122
+queryById_119 120 125
+queryByIdBatch_130 131 140
+queryByIdBatch_130 131 143
+/users/leochanj/train-ticket/ts-execute-service/src/main/java/execute/ExecuteApplication.java
 restTemplate_28 29 29
-/home/lei/train-ticket/ts-security-service/src/main/java/security/entity/Order.java
+/users/leochanj/train-ticket/ts-execute-service/src/main/java/execute/serivce/ExecuteServiceImpl.java
+ticketExecute_30 33 41
+ticketExecute_30 33 47
+ticketExecute_30 33 50
+ticketExecute_30 33 59
+ticketExecute_30 33 65
+ticketExecute_30 33 68
+ticketExecute_30 33 72
+ticketCollect_78 81 89
+ticketCollect_78 81 95
+ticketCollect_78 81 98
+ticketCollect_78 81 107
+ticketCollect_78 81 112
+ticketCollect_78 81 115
+ticketCollect_78 81 119
+executeOrder_125 126 134
+executeOrderOther_138 139 147
+getOrderByIdFromOrder_150 151 160
+getOrderByIdFromOrderOther_163 164 173
+/users/leochanj/train-ticket/ts-execute-service/src/main/java/execute/controller/ExecuteControlller.java
+home_26 27 27
+executeTicket_32 33 35
+collectTicket_40 41 43
+/users/leochanj/train-ticket/ts-execute-service/src/main/java/execute/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-execute-service/src/main/java/execute/entity/Order.java
 equals_70 71 72
 equals_70 71 75
 equals_70 71 78
 equals_70 71 81
 hashCode_99 100 102
-/home/lei/train-ticket/ts-security-service/src/main/java/security/controller/SecurityController.java
-home_27 28 28
-findAllSecurityConfig_33 34 35
-create_40 41 42
-update_47 48 49
-delete_54 55 56
-check_61 62 63
-/home/lei/train-ticket/ts-security-service/src/main/java/security/service/SecurityServiceImpl.java
-findAllSecurityConfig_39 40 42
-findAllSecurityConfig_39 40 45
-addNewSecurityConfig_49 50 53
-addNewSecurityConfig_49 50 61
-modifySecurityConfig_66 67 70
-modifySecurityConfig_66 67 76
-deleteSecurityConfig_81 82 85
-deleteSecurityConfig_81 82 88
-check_93 95 109
-check_93 95 111
-getSecurityOrderInfoFromOrder_115 116 127
-getSecurityOrderOtherInfoFromOrder_130 131 142
-/home/lei/train-ticket/ts-security-service/src/main/java/security/config/SecurityConfig.java
+/users/leochanj/train-ticket/ts-order-other-service/src/main/java/other/OrderOtherApplication.java
+restTemplate_29 30 30
+/users/leochanj/train-ticket/ts-order-other-service/src/main/java/other/controller/OrderOtherController.java
+home_29 30 30
+getTicketListByDateAndTripId_36 37 38
+createNewOrder_43 44 47
+addcreateNewOrder_52 53 54
+queryOrders_59 61 62
+queryOrdersForRefresh_68 70 71
+calculateSoldTicket_77 79 80
+getOrderPrice_85 86 87
+payOrder_92 93 94
+getOrderById_99 100 101
+modifyOrder_106 107 108
+securityInfoCheck_113 115 116
+saveOrderInfo_121 124 125
+updateOrder_130 131 132
+deleteOrder_137 138 139
+findAllOrder_146 147 148
+/users/leochanj/train-ticket/ts-order-other-service/src/main/java/other/config/SecurityConfig.java
+passwordEncoder_37 38 38
+corsConfigurer_50 51 51
+/users/leochanj/train-ticket/ts-order-other-service/src/main/java/other/service/OrderOtherServiceImpl.java
+getSoldTickets_37 38 54
+getSoldTickets_37 38 58
+findOrderById_63 64 67
+findOrderById_63 64 69
+create_74 75 79
+create_74 75 85
+alterOrder_101 103 107
+alterOrder_101 103 116
+alterOrder_101 103 119
+queryOrders_124 126 177
+queryOrders_124 126 180
+queryOrdersForRefresh_185 186 197
+queryForStationId_200 202 210
+saveChanges_214 215 218
+saveChanges_214 215 239
+cancelOrder_244 246 249
+cancelOrder_244 246 254
+queryAlreadySoldOrders_259 260 291
+getAllOrders_295 296 299
+getAllOrders_295 296 301
+modifyOrder_306 307 310
+modifyOrder_306 307 314
+getOrderPrice_319 320 323
+getOrderPrice_319 320 326
+payOrder_331 332 335
+payOrder_331 332 339
+getOrderById_344 345 349
+getOrderById_344 345 351
+checkSecurityAboutOrder_356 357 377
+deleteOrder_381 382 386
+deleteOrder_381 382 389
+addNewOrder_394 395 399
+addNewOrder_394 395 405
+updateOrder_410 411 415
+updateOrder_410 411 435
+/users/leochanj/train-ticket/ts-order-other-service/src/main/java/other/entity/LeftTicketInfo.java
+toString_23 24 24
+/users/leochanj/train-ticket/ts-order-other-service/src/main/java/other/entity/QueryInfo.java
+isEnableTravelDateQuery_72 73 73
+isEnableBoughtDateQuery_76 77 77
+isEnableStateQuery_80 81 81
+/users/leochanj/train-ticket/ts-order-other-service/src/main/java/other/entity/Order.java
+equals_72 73 74
+equals_72 73 77
+equals_72 73 80
+equals_72 73 83
+hashCode_101 102 104
+/users/leochanj/train-ticket/ts-common/src/main/java/edu/fudan/common/util/JsonUtils.java
+object2Json_26 27 34
+object2Map_38 39 41
+jsonToMap_49 50 50
+json2Object_58 59 69
+conveterObject_73 74 75
+/users/leochanj/train-ticket/ts-common/src/main/java/edu/fudan/common/config/SwaggerConfig.java
+createRestApi_27 28 29
+apiInfo_36 37 37
+/users/leochanj/train-ticket/ts-common/src/main/java/edu/fudan/common/security/jwt/JWTUtil.java
+getAuthorities_40 41 41
+getPassword_45 46 46
+getUsername_50 51 51
+isAccountNonExpired_55 56 56
+isAccountNonLocked_60 61 61
+isCredentialsNonExpired_65 66 66
+isEnabled_70 71 71
+isEnabled_70 71 75
+isEnabled_70 71 77
+getUserName_80 81 81
+getRole_84 85 86
+getTokenFromHeader_89 90 92
+getTokenFromHeader_89 90 94
+validateToken_97 98 100
+getClaims_119 120 120
+/users/leochanj/train-ticket/ts-config-service/src/main/java/config/SecurityConfig.java
+passwordEncoder_37 38 38
+corsConfigurer_50 51 51
+/users/leochanj/train-ticket/ts-config-service/src/main/java/config/ConfigApplication.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-config-service/src/main/java/config/controller/ConfigController.java
+home_31 32 32
+queryAll_37 38 39
+createConfig_44 45 46
+updateConfig_51 52 53
+deleteConfig_59 60 61
+retrieve_66 67 68
+/users/leochanj/train-ticket/ts-config-service/src/main/java/config/service/ConfigServiceImpl.java
+create_29 30 33
+create_29 30 38
+update_43 44 47
+update_43 44 52
+query_58 59 62
+query_58 59 65
+delete_70 71 75
+delete_70 71 79
+queryAll_84 85 89
+queryAll_84 85 92
+/users/leochanj/train-ticket/ts-contacts-service/src/main/java/contacts/ContactsApplication.java
+restTemplate_28 29 29
+/users/leochanj/train-ticket/ts-contacts-service/src/main/java/contacts/controller/ContactsController.java
+home_30 31 31
+getAllContacts_36 37 38
+createNewContacts_43 45 46
+createNewContactsAdmin_51 52 54
+deleteContacts_60 61 61
+modifyContacts_67 68 69
+findContactsByAccountId_74 75 77
+getContactsByContactsId_82 83 85
+/users/leochanj/train-ticket/ts-contacts-service/src/main/java/contacts/config/SecurityConfig.java
 passwordEncoder_34 35 35
 corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-contacts-service/src/main/java/contacts/service/ContactsServiceImpl.java
+findContactsById_30 31 34
+findContactsById_30 31 37
+findContactsByAccountId_42 43 45
+createContacts_49 50 53
+createContacts_49 50 56
+create_61 62 74
+create_61 62 78
+delete_83 84 88
+delete_83 84 91
+modify_96 97 103
+modify_96 97 111
+getAllContacts_116 117 119
+getAllContacts_116 117 122
+/users/leochanj/train-ticket/ts-contacts-service/src/main/java/contacts/entity/Contacts.java
+equals_37 38 39
+equals_37 38 42
+equals_37 38 45
+equals_37 38 48
+hashCode_56 57 59
+/users/leochanj/train-ticket/ts-admin-order-service/src/main/java/adminorder/AdminOrderApplication.java
+restTemplate_27 28 28
+/users/leochanj/train-ticket/ts-admin-order-service/src/main/java/adminorder/controller/AdminOrderController.java
+home_27 28 28
+getAllOrders_33 34 35
+addOrder_39 40 41
+updateOrder_45 46 47
+deleteOrder_51 52 53
+/users/leochanj/train-ticket/ts-admin-order-service/src/main/java/adminorder/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-admin-order-service/src/main/java/adminorder/service/AdminOrderServiceImpl.java
+getAllOrders_28 30 68
+deleteOrder_73 74 96
+updateOrder_101 103 127
+addOrder_131 133 155
+/users/leochanj/train-ticket/ts-admin-order-service/src/main/java/adminorder/entity/Order.java
+equals_61 62 63
+equals_61 62 66
+equals_61 62 69
+equals_61 62 72
+hashCode_90 91 93
+/users/leochanj/train-ticket/ts-payment-service/src/main/java/com/trainticket/controller/PaymentController.java
+home_28 29 29
+pay_33 34 35
+addMoney_39 40 41
+query_45 46 47
+/users/leochanj/train-ticket/ts-payment-service/src/main/java/com/trainticket/config/SecurityConfig.java
+passwordEncoder_34 35 35
+corsConfigurer_47 48 48
+/users/leochanj/train-ticket/ts-payment-service/src/main/java/com/trainticket/service/PaymentServiceImpl.java
+pay_32 34 40
+pay_32 34 43
+addMoney_48 49 53
+query_57 58 60
+query_57 58 63

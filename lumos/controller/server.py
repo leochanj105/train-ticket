@@ -83,7 +83,7 @@ class Server:
         tpstr += "]"
         msg = "{type:remove, tps:" + tpstr + "}"
         return msg
-    def parse_tps_file(self, data, type):
+    def parse_tps_file(self, data, tptype):
         service = ""
         fname = ""
         for line in data:
@@ -96,11 +96,11 @@ class Server:
                         fname += temp[i]
                         fname += "."
                     fname += temp[-1].split(".java")[0]
-                if type == "c":
+                if tptype == "c":
                     if service not in self.coarse_blocks:
                         self.coarse_blocks[service] = {}
                     self.coarse_blocks[service][fname] = {}
-                elif type == "f":
+                elif tptype == "f":
                     if service not in self.fine_blocks:
                         self.fine_blocks[service] = {}
                     self.fine_blocks[service][fname] = {}
@@ -111,11 +111,11 @@ class Server:
                 s = int(temp[1])
                 e = int(temp[2])
 
-                if type == "c":
+                if tptype == "c":
                     if method_name not in self.coarse_blocks[service][fname]:
                         self.coarse_blocks[service][fname][method_name] = []
                     self.coarse_blocks[service][fname][method_name].append((s, e))
-                elif type == "f":
+                elif tptype == "f":
                     if method_name not in self.fine_blocks[service][fname]:
                         self.fine_blocks[service][fname][method_name] = []
                     self.fine_blocks[service][fname][method_name].append((s, e))
@@ -139,7 +139,7 @@ class Server:
         fine = open(tp_dir + "fine_blocks.lms", "r")
         data = fine.readlines()
         fine.close()
-        self.parse_tps_file(data, "d")
+        self.parse_tps_file(data, "f")
 
         return
 

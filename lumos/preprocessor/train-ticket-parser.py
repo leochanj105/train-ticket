@@ -86,6 +86,42 @@ class Parse:
 
         return methods
 
+    def ParseFine(self, block, method_name, ends):
+        fine_blocks = []
+        start = 0
+        end = 0
+        for i in range(len(block)):
+            start = block[i].position.line
+
+            if i < len(block) - 1:
+                end = block[i+1].position.line
+                for temp_end in ends:
+                    if temp_end > start and temp_end < end:
+                        end = temp_end
+                        fine_blocks.append((method_name, start, end))
+                fine_blocks.append((method_name, start, block[i+1].position.line))
+
+                if("IfStatement" in str(type(block[i]))):
+                    if block[i].then_statement is not None and "BlockStatement" in str(type(block[i].then_statement)):
+                        #print(type(block[i].then_statement))
+                        #if("distribute" in method_name):
+                        #    print(thenstmts)
+                        thenstmts = block[i].then_statement.statements
+                        
+                        #if("distribute" in method_name):
+                        #    print(thenstmts[-1].position.line)
+                        ifends = [block[i+1].position.line]
+                        fine_blocks += self.ParseFine(thenstmts, method_name, ifends)
+                    if block[i].else_statement is not None and "BlockStatement" in str(type(block[i].else_statement)):
+                        elsestmts = block[i].else_statement.statements
+                        ifends = [block[i+1].position.line]
+                        fine_blocks += self.ParseFine(elsestmts, method_name, ifends)
+                
+            else:
+                for end in ends:
+                    if end >= start:
+                        fine_blocks.append((method_name, start, end))
+        return fine_blocks
 
     def ParseCodeBlocks(self):
         fine_blocks = []
@@ -98,31 +134,16 @@ class Parse:
             ends = self.methods[method_name]["end"]
             for end in ends:
                 coarse_blocks.append((method_name, method[0].position.line, end))
-
-            start = 0
-            end = 0
-            for i in range(len(method)):
-                start = method[i].position.line
-
-                if i < len(method) - 1:
-                    end = method[i+1].position.line
-                    for temp_end in ends:
-                        if temp_end > start and temp_end < end:
-                            end = temp_end
-                            fine_blocks.append((method_name, start, end))
-                    
-                    fine_blocks.append((method_name, start, method[i+1].position.line))
-                else:
-                    for end in ends:
-                        if end >= start:
-                            fine_blocks.append((method_name, start, end))
-
+            fine_blocks += self.ParseFine(method, method_name, ends)
+            #if("distribute" in method_name):
+            #    print(fine_blocks)
+            
         return fine_blocks, coarse_blocks
 
 
 
 if __name__ == '__main__':
-    train_ticket_path = "/home/lei/train-ticket/"
+    train_ticket_path = "/users/leochanj/train-ticket/"
 
     coarse_blocks_file = "coarse_blocks.lms"
     fine_blocks_file = "fine_blocks.lms"
