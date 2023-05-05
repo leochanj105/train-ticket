@@ -5,9 +5,11 @@ import json
 import requests
 import asyncio
 
-JAEGER_TRACES_ENDPOINT = "http://jaeger-service:16686/api/traces?limit=20000&"
+JAEGER_ADDR = "c220g1-030623.wisc.cloudlab.us"
+
+JAEGER_TRACES_ENDPOINT = f"http://{JAEGER_ADDR}:16686/api/traces?limit=20000&"
 JAEGER_TRACES_PARAMS = "service="
-JAEGER_SERVICES_ENDPOINT = "http://jaeger-service:16686/api/services"
+JAEGER_SERVICES_ENDPOINT = f"http://{JAEGER_ADDR}:16686/api/services"
 
 class Collector:
     def __init__(self):

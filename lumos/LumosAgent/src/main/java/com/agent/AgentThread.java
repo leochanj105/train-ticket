@@ -61,10 +61,11 @@ public class AgentThread implements Runnable, MessageHandler{
     public void connect(String controllerAddr){
         try {
             this.client = new WebSocketClient(new URI(controllerAddr), this);
-            client.send(sname);
         } catch (Exception e) {
             e.printStackTrace();
         }
+	
+        this.client.send(sname);
     }
 
     public void handleJSON(String jstr){
@@ -129,9 +130,28 @@ public class AgentThread implements Runnable, MessageHandler{
             }
 
         }
-        else{
-            System.out.println("removing temporarily not implemented");
+        else if(x.equals("remove")){
+            //System.out.println("removing temporarily not implemented");
+    	    JSONArray arr = obj.getJSONArray("tps");
+            for(int i = 0; i < arr.length(); i++){
+                JSONObject tp = arr.getJSONObject(i);
+                String id = tp.getString("id");
+		DynamicModification mod = tpmap.get(id);
+		if(mod != null){
+		    tpmap.remove(id);
+		    this.manager.remove(mod);
+	    	    try{	    
+              	 	this.manager.install();
+	    	    }
+	    	    catch(Exception e){
+            	 	e.printStackTrace();
+	   	    }
+		}
+	    }
         }
+	else{
+	    System.out.println("Not implemented!");
+	}
     }
 
     public void handleMessage(String message){
@@ -166,7 +186,8 @@ public class AgentThread implements Runnable, MessageHandler{
 
 
         // Connect to websocket controller server
-        connect("ws://lumos:8765");
+	connect("ws://lumos:8765");
+	
 	
 /*	
         // A test of adding a tracepoint, then remove it...

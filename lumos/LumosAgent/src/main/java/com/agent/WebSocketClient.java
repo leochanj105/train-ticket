@@ -17,16 +17,26 @@ public class WebSocketClient {
     private MessageHandler handler;
 
     public WebSocketClient(URI uri, MessageHandler handler){
-        try {
-            this.handler = handler;
-            WebSocketContainer container = ContainerProvider.getWebSocketContainer();
-            System.out.println("connecting...");
-            container.connectToServer(this, uri);
-            System.out.println("connected");
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        this.handler = handler;
+        WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+	while(this.session == null){
+            try {
+                System.out.println("connecting...");
+                container.connectToServer(this, uri);        
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+	    if(this.session == null){
+		try{
+		    Thread.sleep(5000);
+		}
+		catch(Exception e){
+		    e.printStackTrace();
+		}
+		System.out.println("Reconnecting...");
+	    }
+	}
+        System.out.println("connected");
     }
 
     @OnOpen

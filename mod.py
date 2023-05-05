@@ -1,5 +1,5 @@
 import os
-collector_addr = "collector"
+collector_addr = "c220g1-030623.wisc.cloudlab.us"
 for fdir in os.listdir('./'):
     if("ts-" in fdir and "service" in fdir):
         lines = []

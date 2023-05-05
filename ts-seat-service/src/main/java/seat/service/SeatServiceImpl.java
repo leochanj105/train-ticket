@@ -145,7 +145,7 @@ public class SeatServiceImpl implements SeatService {
             trainTypeResult = trainTypeResponse.getData();
             //SeatServiceImpl.LOGGER.info("[distributeSeat 2] The result of getTrainTypeResult is {}", trainTypeResponse.toString());
         }
-
+	boolean noop = true;
 
         //Assign seats
         List<String> stationList = routeResult.getData().getStations();
@@ -157,6 +157,8 @@ public class SeatServiceImpl implements SeatService {
             seatTotalNum = trainTypeResult.getEconomyClass();
             //SeatServiceImpl.LOGGER.info("[distributeSeat] The request seat type is economyClass and the total num is {}", seatTotalNum);
         }
+	noop = false;
+
         String startStation = seatRequest.getStartStation();
         Ticket ticket = new Ticket();
         ticket.setStartStation(startStation);
@@ -180,10 +182,11 @@ public class SeatServiceImpl implements SeatService {
                     //SeatServiceImpl.LOGGER.info("[distributeSeat] Use the previous distributed seat number! {}", soldTicket.getSeatNo());
                     return new Response<>(1, "Use the previous distributed seat number!", ticket);
                 }
+		noop = true;
             }
-	    //int counter = 0;
-	    long start = System.currentTimeMillis();
 	    
+	    noop = false;
+
             while (isContained(soldTickets, seat)) {
 		//counter ++;
                 //seat = rand.nextInt(range) + 1;
@@ -191,12 +194,14 @@ public class SeatServiceImpl implements SeatService {
 		//seat = RandomService.nextInt(range) + 1;
 		seat = rs.nextInt(range) + 1;
             }
+	    noop = true;
 	    //long finish = System.currentTimeMillis();
 	    //Span span = Span.current();
 	    //span.addEvent(counter + ", " + rs.re_init + ", " + (finish - start));
 	    //System.out.println("[LUMOS] " + headers.hashCode() + ": Seat = " + seat + ", Range = " + range);
 
         }
+
         ticket.setSeatNo(seat);
         //SeatServiceImpl.LOGGER.info("[distributeSeat] Use a new seat number! {}", seat);
         return new Response<>(1, "Use a new seat number!", ticket);

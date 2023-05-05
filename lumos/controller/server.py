@@ -75,7 +75,14 @@ class Server:
         newid = self.id
         self.id += 1
         return f"id:'{newid}', cname:{cname}, method:{method}, tptype:span"
-    
+    def removetps(self, tpids):
+        tps = ["{id: '" + tpid + "'}, " for tpid in tpids]
+        tpstr = "["
+        for tp in tps:
+            tpstr += tp
+        tpstr += "]"
+        msg = "{type:remove, tps:" + tpstr + "}"
+        return msg
     def parse_tps_file(self, data, type):
         service = ""
         fname = ""
@@ -171,6 +178,13 @@ class Server:
             msg = self.timingtps(timingarray)
             await conn.send(msg)
             print(f"> {msg}")
+                       
+            for i in range(120):
+                print(120 - i)
+                await asyncio.sleep(1)
+            msg = self.removetps(["0", "1", "2"])
+            print(f"> {msg}")
+            await conn.send(msg)
         except websockets.ConnectionClosedOK:
             pass
 
